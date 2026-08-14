@@ -1,5 +1,9 @@
 # Massing Study R2 — after the survey and the ground report
 
+> **§4 (Scheme E) superseded by Massing Study R3** (`04-massing-study-r3.md`),
+> which reworks the massing around the requirement that the three sections be
+> separated with different entrances. §§1–3 below stand.
+
 Supersedes Massing Study 01 §§0, 4, 5, 6. Sections 1, 2, 3 of that
 document (the source review, the outdoor-area reframe, and the 32 × 19
 constraint) stand unchanged.

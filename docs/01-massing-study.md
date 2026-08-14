@@ -1,5 +1,11 @@
 # Boriyad Youth Academy — Massing Study 01
 
+> **Superseded in part by Massing Study R2** (`03-massing-study-r2.md`).
+> Sections 0, 4, 5 and 6 of this document were written before the survey
+> coordinates and the ground report were available and are replaced there.
+> Sections 1, 2 and 3 — the source review, the outdoor-area reframe and the
+> 32 × 19 constraint — still stand.
+
 Working notes supporting Design Brief 01, Phase 1 (Concept Design).
 Status: for discussion. All geometry indicative pending survey.
 

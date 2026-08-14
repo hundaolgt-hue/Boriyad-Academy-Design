@@ -2,232 +2,132 @@
 
 <style>
 :root{
-  --paper:#F1F0F4;
-  --sheet:#FBFAFD;
-  --ink:#16151B;
-  --ink2:#56535F;
-  --ink3:#83808D;
-  --rule:#DCD9E2;
-  --rule2:#C6C2CE;
-  --blue:#2A6396;
-  --blue-soft:#DCE6EF;
-  --amber:#A9762A;
-  --amber-soft:#F0E5D0;
-  --olive:#5F6E3C;
-  --olive-soft:#E1E5D4;
-  --brick:#9E4530;
-  --brick-soft:#F2DFD9;
-
+  --paper:#F1F0F4; --sheet:#FBFAFD; --ink:#16151B; --ink2:#56535F; --ink3:#83808D;
+  --rule:#DCD9E2; --rule2:#C6C2CE;
+  --blue:#2A6396; --blue-soft:#DCE6EF;
+  --amber:#A9762A; --amber-soft:#F0E5D0;
+  --olive:#5F6E3C; --olive-soft:#E1E5D4;
+  --brick:#9E4530; --brick-soft:#F2DFD9;
   --f-display:Optima,Candara,"Gill Sans Nova","Gill Sans MT","Gill Sans",Corbel,"Trebuchet MS",sans-serif;
   --f-body:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,serif;
   --f-data:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-
   --max:1120px;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --paper:#131218;
-    --sheet:#1A1922;
-    --ink:#ECEAF2;
-    --ink2:#A29EAE;
-    --ink3:#7C7889;
-    --rule:#2D2A38;
-    --rule2:#3D3A4A;
-    --blue:#7FB0DC;
-    --blue-soft:#1E2C3A;
-    --amber:#D8A45C;
-    --amber-soft:#2F2718;
-    --olive:#9FAF77;
-    --olive-soft:#232818;
-    --brick:#D5836D;
-    --brick-soft:#331E19;
+    --paper:#131218; --sheet:#1A1922; --ink:#ECEAF2; --ink2:#A29EAE; --ink3:#7C7889;
+    --rule:#2D2A38; --rule2:#3D3A4A;
+    --blue:#7FB0DC; --blue-soft:#1E2C3A;
+    --amber:#D8A45C; --amber-soft:#2F2718;
+    --olive:#9FAF77; --olive-soft:#232818;
+    --brick:#D5836D; --brick-soft:#331E19;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#131218;
-  --sheet:#1A1922;
-  --ink:#ECEAF2;
-  --ink2:#A29EAE;
-  --ink3:#7C7889;
-  --rule:#2D2A38;
-  --rule2:#3D3A4A;
-  --blue:#7FB0DC;
-  --blue-soft:#1E2C3A;
-  --amber:#D8A45C;
-  --amber-soft:#2F2718;
-  --olive:#9FAF77;
-  --olive-soft:#232818;
-  --brick:#D5836D;
-  --brick-soft:#331E19;
+  --paper:#131218; --sheet:#1A1922; --ink:#ECEAF2; --ink2:#A29EAE; --ink3:#7C7889;
+  --rule:#2D2A38; --rule2:#3D3A4A;
+  --blue:#7FB0DC; --blue-soft:#1E2C3A;
+  --amber:#D8A45C; --amber-soft:#2F2718;
+  --olive:#9FAF77; --olive-soft:#232818;
+  --brick:#D5836D; --brick-soft:#331E19;
 }
 
 *{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--f-body);
-  font-size:17px;
-  line-height:1.62;
-  -webkit-font-smoothing:antialiased;
-}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
 
-/* ---------- masthead ---------- */
-.masthead{border-bottom:1.5px solid var(--ink);padding:48px 0 22px;margin-bottom:0}
-.eyebrow{
-  font-family:var(--f-data);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ink3);display:flex;flex-wrap:wrap;gap:18px;margin-bottom:26px;
-}
-h1{
-  font-family:var(--f-display);font-weight:400;font-size:clamp(38px,6vw,64px);
-  line-height:1.04;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance;
-}
+.masthead{border-bottom:1.5px solid var(--ink);padding:48px 0 22px}
+.eyebrow{font-family:var(--f-data);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink3);display:flex;flex-wrap:wrap;gap:18px;margin-bottom:26px}
+.eyebrow .rev{color:var(--brick)}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(36px,5.6vw,60px);
+  line-height:1.05;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
 h1 em{font-style:normal;color:var(--blue)}
-.standfirst{
-  font-size:20px;line-height:1.5;color:var(--ink2);max-width:38em;margin:0;
-}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink2);max-width:39em;margin:0}
 
-/* ---------- metric strip ---------- */
-.metrics{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:1px;background:var(--rule);border-bottom:1px solid var(--rule);
-}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--rule);border-bottom:1px solid var(--rule)}
 .metric{background:var(--paper);padding:20px 0 22px}
-.metric .n{
-  font-family:var(--f-display);font-size:31px;line-height:1;letter-spacing:-.02em;
-  font-variant-numeric:tabular-nums;display:block;margin-bottom:7px;
-}
-.metric .l{font-family:var(--f-data);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3)}
+.metric .n{font-family:var(--f-display);font-size:30px;line-height:1;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;display:block;margin-bottom:7px}
+.metric .l{font-family:var(--f-data);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink3)}
 .metric.alert .n{color:var(--brick)}
+.metric.good .n{color:var(--olive)}
 
-/* ---------- sections ---------- */
 section{padding:56px 0 8px;border-top:1px solid var(--rule)}
-section:first-of-type{border-top:none}
-.shead{display:grid;grid-template-columns:64px 1fr;gap:0;align-items:start;margin-bottom:26px}
-.snum{
-  font-family:var(--f-data);font-size:11px;letter-spacing:.1em;color:var(--blue);
-  padding-top:.55em;
-}
-h2{
-  font-family:var(--f-display);font-weight:400;font-size:clamp(26px,3.4vw,36px);
-  line-height:1.14;letter-spacing:-.01em;margin:0;text-wrap:balance;max-width:20em;
-}
-.sbody{display:grid;grid-template-columns:64px minmax(0,1fr);gap:0}
+.shead{display:grid;grid-template-columns:64px 1fr;align-items:start;margin-bottom:26px}
+.snum{font-family:var(--f-data);font-size:11px;letter-spacing:.1em;color:var(--blue);padding-top:.55em}
+h2{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,3.4vw,36px);
+  line-height:1.14;letter-spacing:-.01em;margin:0;text-wrap:balance;max-width:20em}
+.sbody{display:grid;grid-template-columns:64px minmax(0,1fr)}
 .sbody > .col{min-width:0}
-h3{
-  font-family:var(--f-display);font-weight:400;font-size:20px;letter-spacing:.005em;
-  margin:34px 0 10px;color:var(--ink);
-}
+h3{font-family:var(--f-display);font-weight:400;font-size:20px;margin:34px 0 10px}
 h3:first-child{margin-top:0}
 p{margin:0 0 16px;max-width:36em}
 .lede{font-size:19px;color:var(--ink2);max-width:34em}
-strong{font-weight:600}
 em.oro{font-style:italic;color:var(--ink2)}
 a{color:var(--blue)}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
 
 ul{margin:0 0 16px;padding-left:0;list-style:none;max-width:36em}
 ul li{position:relative;padding-left:22px;margin-bottom:9px}
-ul li::before{
-  content:"";position:absolute;left:2px;top:.62em;width:7px;height:1.5px;background:var(--rule2);
-}
+ul li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:1.5px;background:var(--rule2)}
 
-/* ---------- callout ---------- */
-.note{
-  border-left:2px solid var(--blue);background:var(--sheet);
-  padding:18px 22px;margin:24px 0;max-width:38em;
-}
+.note{border-left:2px solid var(--blue);background:var(--sheet);padding:18px 22px;margin:24px 0;max-width:38em}
 .note.warn{border-left-color:var(--brick)}
+.note.good{border-left-color:var(--olive)}
 .note p:last-child{margin-bottom:0}
-.note .tag{
-  font-family:var(--f-data);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--blue);display:block;margin-bottom:8px;
-}
+.note .tag{font-family:var(--f-data);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--blue);display:block;margin-bottom:8px}
 .note.warn .tag{color:var(--brick)}
+.note.good .tag{color:var(--olive)}
 
-/* ---------- quote of source ---------- */
-.source{
-  font-family:var(--f-body);font-style:italic;font-size:16px;color:var(--ink2);
-  border-left:1px solid var(--rule2);padding-left:18px;margin:0 0 16px;max-width:36em;
-}
+.source{font-style:italic;font-size:16px;color:var(--ink2);border-left:1px solid var(--rule2);
+  padding-left:18px;margin:0 0 16px;max-width:36em}
 
-/* ---------- tables ---------- */
 .tw{overflow-x:auto;margin:22px 0 26px;-webkit-overflow-scrolling:touch}
 table{border-collapse:collapse;width:100%;min-width:480px;font-size:15px}
-caption{
-  text-align:left;font-family:var(--f-data);font-size:10.5px;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--ink3);padding-bottom:10px;
-}
+caption{text-align:left;font-family:var(--f-data);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink3);padding-bottom:10px}
 th,td{padding:9px 14px 9px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
-thead th{
-  font-family:var(--f-data);font-weight:400;font-size:10.5px;letter-spacing:.11em;
-  text-transform:uppercase;color:var(--ink3);border-bottom:1px solid var(--rule2);
-}
-td.n,th.n{text-align:right;font-family:var(--f-data);font-size:13.5px;font-variant-numeric:tabular-nums;padding-right:0}
+thead th{font-family:var(--f-data);font-weight:400;font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink3);border-bottom:1px solid var(--rule2)}
+td.n,th.n{text-align:right;font-family:var(--f-data);font-size:13.5px;
+  font-variant-numeric:tabular-nums;padding-right:0}
 tbody tr:last-child td{border-bottom:none}
 tr.total td{border-top:1px solid var(--rule2);font-weight:600}
-.yes{color:var(--olive)}
-.no{color:var(--brick)}
-.pick{background:var(--blue-soft)}
+.yes{color:var(--olive)} .no{color:var(--brick)} .pick{background:var(--blue-soft)}
+.hot{background:var(--brick-soft);color:var(--brick)}
 
-/* ---------- options ---------- */
-.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);margin:8px 0 12px}
-.opt{background:var(--paper);padding:0 0 20px}
-.opt figure{margin:0}
-.opt svg{display:block;width:100%;height:auto}
-.opt .cap{padding:2px 16px 0}
-.opt .oid{
-  font-family:var(--f-data);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink3);margin-bottom:6px;
-}
-.opt h4{
-  font-family:var(--f-display);font-weight:400;font-size:19px;margin:0 0 4px;line-height:1.2;
-}
-.opt .verdict{
-  font-family:var(--f-data);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-  display:inline-block;padding:3px 8px;margin-bottom:10px;
-}
-.v-out{color:var(--brick);background:var(--brick-soft)}
-.v-in{color:var(--blue);background:var(--blue-soft)}
-.opt p{font-size:15px;line-height:1.55;margin:0;color:var(--ink2)}
+figure{margin:26px 0 8px}
+figure svg{display:block;width:100%;height:auto;background:transparent}
+figcaption{font-family:var(--f-data);font-size:11px;line-height:1.6;letter-spacing:.03em;
+  color:var(--ink3);margin-top:12px;max-width:44em}
+.dual{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:34px;margin:26px 0 8px}
+.dual figure{margin:0}
 
-/* ---------- key ---------- */
 .key{display:flex;flex-wrap:wrap;gap:20px;font-family:var(--f-data);font-size:10.5px;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin:0 0 22px}
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin:14px 0 0}
 .key span{display:flex;align-items:center;gap:7px}
 .key i{width:13px;height:13px;display:block;border:1px solid var(--rule2)}
 
-/* ---------- stack chart ---------- */
-.stack{margin:10px 0 26px;font-family:var(--f-data);font-size:12px}
-.srow{display:grid;grid-template-columns:60px 1fr 62px;gap:12px;align-items:center;
-  padding:3px 0;border-bottom:1px solid var(--rule)}
-.srow:last-child{border-bottom:none}
-.srow .lv{color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;font-size:10.5px}
-.srow .amt{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
-.bars{display:flex;height:17px;gap:2px}
-.bars b{display:block}
-.b-plate{background:var(--blue)}
-.b-deck{background:var(--amber)}
-
-/* ---------- invert compare ---------- */
-.flip{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;
+.flip{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;
   background:var(--rule);margin:24px 0 26px}
 .flip > div{background:var(--paper);padding:20px 22px 22px}
 .flip .h{font-family:var(--f-data);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink3);margin-bottom:12px}
-.flip .h.on{color:var(--blue)}
+.flip .h.on{color:var(--olive)}
+.flip .h.off{color:var(--brick)}
 .flip ul{margin:0;max-width:none}
 .flip li{font-size:15px;color:var(--ink2)}
 
-/* ---------- asks ---------- */
 .asks{counter-reset:a;margin:20px 0 8px;max-width:38em}
 .ask{counter-increment:a;display:grid;grid-template-columns:30px 1fr;gap:14px;
   padding:16px 0;border-bottom:1px solid var(--rule)}
-.ask::before{
-  content:counter(a);font-family:var(--f-data);font-size:12px;color:var(--blue);
-  padding-top:.3em;font-variant-numeric:tabular-nums;
-}
+.ask::before{content:counter(a);font-family:var(--f-data);font-size:12px;color:var(--blue);
+  padding-top:.3em;font-variant-numeric:tabular-nums}
 .ask h4{font-family:var(--f-display);font-weight:400;font-size:18px;margin:0 0 5px}
 .ask p{font-size:15.5px;color:var(--ink2);margin:0}
 
@@ -240,7 +140,6 @@ footer{border-top:1.5px solid var(--ink);margin-top:56px;padding:22px 0 60px;
   .wrap{padding:0 20px}
   .shead,.sbody{grid-template-columns:1fr}
   .snum{padding-top:0;margin-bottom:8px}
-  .srow{grid-template-columns:48px 1fr 56px;gap:8px}
 }
 </style>
 
@@ -250,235 +149,212 @@ footer{border-top:1.5px solid var(--ink);margin-top:56px;padding:22px 0 60px;
   <div class="eyebrow">
     <span>Boriyad Youth Academy</span>
     <span>Ashewa Meda · Oromia</span>
-    <span>Massing Study 01</span>
+    <span class="rev">Massing Study R2</span>
     <span>Phase 1 · Concept</span>
   </div>
-  <h1>Four ways to stack<br>3,600 children on<br><em>4,621 square metres</em></h1>
-  <p class="standfirst">A massing exploration against Design Brief 01 and Qajeelfama Lakk. 04/2016 — testing the terraced typology arithmetically, and arriving somewhere the brief does not.</p>
+  <h1>The survey moved<br>the building<br><em>ninety degrees</em></h1>
+  <p class="standfirst">Coordinates P1–P5 and the NATM ground report arrived together, and between them they overturned two premises this project had been working from — one in the brief, one of my own. The scheme that comes out the other side is simpler, cheaper, and better oriented.</p>
 </header>
 
 <div class="metrics">
-  <div class="metric"><span class="n">1.28</span><span class="l">m² land / student</span></div>
-  <div class="metric alert"><span class="n">0.47</span><span class="l">m² outdoor / student, untreated</span></div>
-  <div class="metric"><span class="n">85</span><span class="l">classrooms, no shifts</span></div>
-  <div class="metric"><span class="n">13,700</span><span class="l">m² GFA target</span></div>
-  <div class="metric"><span class="n">32 × 19</span><span class="l">m — the governing rectangle</span></div>
+  <div class="metric"><span class="n">4,618</span><span class="l">m² surveyed area</span></div>
+  <div class="metric good"><span class="n">1.75°</span><span class="l">east boundary off true N–S</span></div>
+  <div class="metric alert"><span class="n">36 m</span><span class="l">boreholes lie off site</span></div>
+  <div class="metric alert"><span class="n">130%</span><span class="l">peak free swell</span></div>
+  <div class="metric"><span class="n">52%</span><span class="l">coverage proposed, 63% allowed</span></div>
 </div>
 
 <section>
-  <div class="shead"><div class="snum">01</div><h2>What the primary source says that the brief does not</h2></div>
+  <div class="shead"><div class="snum">01</div><h2>The site is square to the sun, and shallower than it looks</h2></div>
   <div class="sbody"><div class="snum"></div><div class="col">
-    <p class="lede">Six points from reading the Afaan Oromo instrument directly. Four of them move area; two of them move the massing.</p>
-
-    <h3>Art. 8.2(6) — the departmental rooms are 96 m² in total</h3>
-    <p class="source">"Kutaalee muummeewwanii 4 <strong>bal'inni waliigalaa isaanii</strong> kaaree meetira 96 (8m x 12m) ta'ee…"</p>
-    <p>The brief flags this as ambiguous and adopts 96 m² <em>each</em>. The word <em class="oro">waliigalaa</em> means combined, and the parallel provision for secondary settles it: Art. 8.3(5) gives four departmental rooms at 120 m² total and <em>30 m² each</em>. Total-then-each is the Bureau's own drafting pattern, and it is content with 30 m² departmental rooms at secondary level.</p>
-    <p><strong>Consequence: −288 m² net, roughly −400 m² GFA.</strong> Still worth confirming, but the ambiguity now runs in our favour rather than against.</p>
-
-    <h3>Art. 15 — ask for much less, and you may not need a waiver at all</h3>
-    <p>The brief seeks blanket consolidation and prices refusal at 1,809 m². Art. 15 requires only that co-located schools <em class="oro">bulchiinsa ofii isaanii akka qabaatan</em> — maintain their own administration. That is an administrative unit, not a duplicated building.</p>
     <div class="tw">
       <table>
-        <caption>Cost of the Art. 15 position</caption>
-        <thead><tr><th>Negotiating position</th><th class="n">Added net</th><th class="n">Added GFA</th></tr></thead>
+        <caption>Boundary geometry from P1–P5</caption>
+        <thead><tr><th>Edge</th><th class="n">Length m</th><th class="n">Azimuth</th><th class="n">Off cardinal</th></tr></thead>
         <tbody>
-          <tr><td>Full duplication — 4 KG + 2 primary as built entities</td><td class="n">1,809</td><td class="n">2,442</td></tr>
-          <tr class="pick"><td>Duplicate directors' offices only; share staff rooms, dining, stores, sanitary</td><td class="n">84</td><td class="n">113</td></tr>
+          <tr class="pick"><td>P1–P2 · east</td><td class="n">84.50</td><td class="n">181.75°</td><td class="n">1.75°</td></tr>
+          <tr><td>P2–P3 · south</td><td class="n">69.06</td><td class="n">279.88°</td><td class="n">9.88°</td></tr>
+          <tr><td>P3–P4 · west</td><td class="n">68.49</td><td class="n">14.46°</td><td class="n">14.46°</td></tr>
+          <tr class="pick"><td>P4–P5–P1 · north</td><td class="n">53.90</td><td class="n">83.69°</td><td class="n">6.31°</td></tr>
+          <tr class="total"><td>Shoelace area</td><td class="n">4,618.05</td><td class="n">—</td><td class="n">—</td></tr>
         </tbody>
       </table>
     </div>
-    <p>A swing of about 2,330 m² of GFA — most of a storey — and it narrows the project's regulatory dependency to the Art. 6 compound-area waiver alone. Art. 11(4), read carefully, sets <em>minimum</em> enrolments for opening a new school, not caps.</p>
-
-    <h3>The sanitation is the unpriced problem</h3>
-    <p>Arts. 8.2(13) and 8.3(17) specify <em class="oro">boolii</em> — <strong>pits</strong> — at one per 25 students. Pits cannot be stacked seven storeys. This is necessarily full waterborne sanitation: about 144 WCs, 25–40 m³ of effluent a day, and no room on 4,621 m² for a septic tank and soakaway.</p>
-    <div class="note warn">
-      <span class="tag">Affects the massing now</span>
-      <p>The answer is an on-site packaged plant — a baffled reactor with a planted gravel filter — with treated effluent irrigating the Art. 7(4) agricultural terrace and flushing the WCs. That needs land or basement volume reserved at concept stage, not at services stage. It is also the strongest environmental argument the scheme has, and it is a necessity rather than a gesture.</p>
+    <p>Design Brief 01 §10.2 states that <em>"the site geometry does not naturally yield an east–west axis"</em>, and Massing Study 01 argued for holding a site grain believed to run 45° off the cardinals. <strong>Both were working from a verbal description of a corner plot, and both were wrong.</strong> The east boundary is within 1.75° of true north–south.</p>
+    <div class="note good">
+      <span class="tag">The most valuable thing in the survey</span>
+      <p>Building parallel to the boundaries now <em>is</em> building east–west. Every classroom can face north or south, shaded by a 1.2 m horizontal overhang, with no residual triangles and no rotation penalty. The brief called this "the single most valuable move available to the design." It turns out to be free.</p>
     </div>
+    <p>The second finding runs the other way. The north and south boundaries are diagonal, so the plot wedges at both ends. The largest true-cardinal rectangle inside the polygon is <strong>51 m east–west by 68 m north–south</strong> — the usable depth is 68 m, not the 84.5 m of the bounding extent. The remaining 1,150 m² is a western and southern wedge: good for landscape, drop-off and the agricultural plot, useless for orthogonal building.</p>
+  </div></div>
 
-    <h3>Water storage is a structural load</h3>
-    <p>Two days' storage for 3,600 students on waterborne sanitation is 70–100 m³ — up to <strong>1,000 kN</strong>, concentrated on the roof. The brief lists "plant, water storage" without a number. Split it: bulk suction tank at the base, a 20–25 m³ service tank at roof, pumped.</p>
-
-    <h3>The five <em class="oro">Golee</em> are a plan diagram, not furniture</h3>
-    <p>Art. 17(1) requires every KG classroom to be divided into five learning corners — language, mathematics, science, social and cultural, art and handcraft. Thirty children plus five corners in 63 m² is 2.1 m² per child. They will not fit inside the room.</p>
-    <p>They fit as a <strong>shared commons</strong>: five classrooms opening onto one <em class="oro">Golee</em> commons that holds the five corners at proper size. Four such clusters make 20 classrooms — and four clusters is exactly the four KG units Art. 11(1) would have us register. The registration structure and the pedagogical structure become the same thing, built rather than waived.</p>
-
-    <h3>Every large room fits an 18–20 m wing</h3>
-    <div class="tw">
-      <table>
-        <caption>Deepest dimension of each major space</caption>
-        <thead><tr><th>Room</th><th>Article</th><th class="n">Size, m</th><th class="n">Depth needed</th></tr></thead>
-        <tbody>
-          <tr><td>Multipurpose hall</td><td>8.3(9)</td><td class="n">16.25 × 26.20</td><td class="n">16.25</td></tr>
-          <tr><td>Secondary library</td><td>8.3(10)</td><td class="n">16 × 17</td><td class="n">16.00</td></tr>
-          <tr><td>Primary library</td><td>8.2(4)</td><td class="n">12 × 15</td><td class="n">12.00</td></tr>
-          <tr><td>Science laboratory</td><td>8.3(8)</td><td class="n">22 × 9</td><td class="n">9.00</td></tr>
-          <tr><td>Workshop</td><td>8.3(14)</td><td class="n">24 × 8</td><td class="n">8.00</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Nothing in the schedule needs more than 16.25 m of depth. That single fact is what makes a courtyard typology viable on this site at all.</p>
+  <figure id="fig-context"></figure>
+  <div class="sbody"><div class="snum"></div><div class="col">
+    <figcaption id="cap-context"></figcaption>
   </div></div>
 </section>
 
 <section>
-  <div class="shead"><div class="snum">02</div><h2>The metric that should drive the massing is not land per student</h2></div>
+  <div class="shead"><div class="snum">02</div><h2>The ground report is not for this site — and its own data undercut its recommendation</h2></div>
   <div class="sbody"><div class="snum"></div><div class="col">
-    <p>The brief's headline figure — 1.28 m² of land per student — measures the problem. It does not measure the solution. What the vertical typology destroys, and must then manufacture back, is <strong>usable outdoor area</strong>.</p>
+    <p class="lede">Two separate problems. One is positional and may be a datum error. The other is a technical gap that matters more.</p>
+
+    <h3>The boreholes sit south of the boundary</h3>
+    <p>The eastings overlap the site. The northings do not — every one of the six holes falls outside the polygon, between 36 and 84 m south of the southern boundary. The report is also addressed to <strong>Three M JY Trading Plc</strong> and locates the works at <em>"Sheger city, Melka Nano Sub city around Amfomeda"</em>, not Ashewa Meda.</p>
+    <p>A hand-held GPS <em>precision</em> error is ±5–10 m and cannot account for this. Either the report belongs to the adjacent parcel, or the survey and the report sit on different datums — an Adindan/WGS84 mismatch produces offsets of exactly this order in Ethiopia. <strong>Either way it cannot carry foundation design here.</strong> Four boreholes to 15 m inside the polygon are needed, and the rockhead variability below makes that urgent rather than procedural.</p>
+
+    <h3>The expansive soil is severe, and the report founds inside it</h3>
     <div class="tw">
       <table>
-        <caption>Outdoor area per student</caption>
-        <thead><tr><th>Condition</th><th class="n">Outdoor m²</th><th class="n">Per student</th></tr></thead>
+        <caption>Free swell and plasticity, Table 6</caption>
+        <thead><tr><th>Borehole</th><th class="n">Depth m</th><th class="n">LL</th><th class="n">PI</th><th class="n">Free swell</th><th>Class</th></tr></thead>
         <tbody>
-          <tr><td>Land available</td><td class="n">4,621</td><td class="n">1.28</td></tr>
-          <tr><td>Open ground remaining after a 63% footprint</td><td class="n">1,709</td><td class="n">0.47</td></tr>
-          <tr class="pick"><td>With courtyard, terraces and roof, as proposed</td><td class="n">4,621</td><td class="n">1.28</td></tr>
-          <tr><td class="no">Hong Kong / Singapore dense urban norm</td><td class="n">—</td><td class="n">3.00–5.00</td></tr>
+          <tr class="hot"><td>BH-4</td><td class="n">1.50–2.00</td><td class="n">105</td><td class="n">63</td><td class="n">130%</td><td>Very high</td></tr>
+          <tr class="hot"><td>BH-2</td><td class="n">2.50–3.00</td><td class="n">82</td><td class="n">45</td><td class="n">120%</td><td>Very high</td></tr>
+          <tr><td>BH-3</td><td class="n">2.50–3.00</td><td class="n">66</td><td class="n">31</td><td class="n">30%</td><td>Moderate</td></tr>
+          <tr><td>BH-5</td><td class="n">2.50–3.00</td><td class="n">66</td><td class="n">36</td><td class="n">30%</td><td>Moderate</td></tr>
+          <tr><td>BH-1</td><td class="n">3.00–3.50</td><td class="n">57</td><td class="n">32</td><td class="n">20%</td><td>Moderate</td></tr>
+          <tr><td>BH-1</td><td class="n">5.50–6.00</td><td class="n">50</td><td class="n">26</td><td class="n">10%</td><td>Low</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Terracing does not add outdoor space here. It recovers the ground the building consumed, almost exactly once over. So every option below is judged first on <strong>how much contiguous, usable, shaded deck it generates</strong> — and only then on how it looks.</p>
-  </div></div>
-</section>
+    <p>A plasticity index of 63 at a liquid limit of 105 is extreme black cotton. The BH-2 sample at <strong>2.50–3.00 m sits at the report's own recommended founding depth of 3.00 m</strong>, and still swells 120%. The report never mentions heave, gives no swell pressure, and does not establish the depth of the active zone — which in Addis Ababa black cotton typically runs 2.5 to 4.0 m.</p>
 
-<section>
-  <div class="shead"><div class="snum">03</div><h2>The tyranny of thirty-two by nineteen</h2></div>
-  <div class="sbody"><div class="snum"></div><div class="col">
-    <p>A FIBA court plus run-off is 32 × 19 m. The <strong>19 m clear dimension</strong> governs this project's massing more than anything else, because a classroom wing is 17–18 m deep — seven metres, a corridor, seven metres. <strong>A court will not sit on the roof of a classroom wing.</strong> It needs one of three things: the roof of a deeper single-storey volume, the top of the building, or a 19 m setback taken in one move at a cost of 600–1,200 m² of plate.</p>
-    <p>That single fact eliminates two of the four massing families outright, and it is why the brief's Level 1 sports terrace costs 900 m² of the plate that would otherwise make a courtyard possible.</p>
-
-    <h3>So invert the brief's sport and greenery stacking</h3>
-    <div class="flip">
-      <div>
-        <div class="h">Brief 01, §8</div>
-        <ul>
-          <li><strong>Level 1</strong> — 900 m² court and hard play</li>
-          <li><strong>L2–L6</strong> — greenery, agriculture, outdoor teaching</li>
-          <li><strong>Roof</strong> — plant, 130–150 m running loop</li>
-        </ul>
-      </div>
-      <div>
-        <div class="h on">Proposed inversion</div>
-        <ul>
-          <li><strong>Level 1</strong> — soft play deck for kindergarten, 280 m²</li>
-          <li><strong>L3–L5</strong> — agriculture, outdoor classrooms, study terraces</li>
-          <li><strong>Roof</strong> — full 32 × 19 court <em>and</em> 170 m running loop</li>
-        </ul>
-      </div>
+    <h3>The recommended bearing capacity is not the worst case</h3>
+    <div class="tw">
+      <table>
+        <caption>Allowable bearing at D = 3.00 m — recommendation against weakest hole</caption>
+        <thead><tr><th>Footing width B</th><th class="n">Tables 10/11 (BH-3)</th><th class="n">BH-2, Table 8</th><th class="n">Overestimate</th></tr></thead>
+        <tbody>
+          <tr><td>1.5 m</td><td class="n">385 kPa</td><td class="n">328 kPa</td><td class="n">17%</td></tr>
+          <tr><td>2.5 m</td><td class="n">367 kPa</td><td class="n">285 kPa</td><td class="n">29%</td></tr>
+          <tr class="hot"><td>3.0 m</td><td class="n">364 kPa</td><td class="n">275 kPa</td><td class="n">32%</td></tr>
+          <tr class="hot"><td>4.0 m</td><td class="n">360 kPa</td><td class="n">247 kPa</td><td class="n">46%</td></tr>
+        </tbody>
+      </table>
     </div>
-    <ul>
-      <li>Court sport is a timetabled, supervised, secondary-weighted activity, and the secondary school sits at L5–L6. Putting the court on the roof puts it <em>closer</em> to its users, not further.</li>
-      <li>Young children need frequent, brief, adjacent outdoor access — a 280 m² soft deck they can spill onto in four minutes, not one hard court five floors below.</li>
-      <li>The roof plate takes the court and the running loop at no cost to any classroom floor. The same court at Level 1 costs 900 m² that must then be rebuilt higher or wider.</li>
-      <li>The impact-noise problem the brief identifies simply disappears. Nothing sits beneath the roof court but plant.</li>
-    </ul>
-    <p>The cost is the 4–6 m ball-catch enclosure and lift access for equipment. The brief already wants the enclosure designed as a taut faceted volume — the most visible thing on the skyline. On the roof it becomes the building's crown rather than a fence halfway up its side.</p>
+    <p>The report adopts BH-3 as the design case, not the weakest hole, and issues an identical recommendation for G+4 and G+6. Its conclusion that <em>"uniform soil layers are identified"</em> is contradicted by its own logs, which show rockhead between 3.5 m and 15.0 m across roughly 50 m. Carry <strong>275 kPa</strong> until site-specific holes say otherwise. Even then the ground is strong — bearing is not what constrains this project.</p>
+    <p>One further item for the structural engineer: the report assigns importance factor <strong>I = 1.0</strong>. Under ES EN 1998-1 a school is Importance Class III, γ<sub>I</sub> = 1.2. The design seismic action is <strong>0.12 g</strong>, not the 0.10 g stated.</p>
+
+    <div class="note good">
+      <span class="tag">Why this makes the basement nearly free</span>
+      <p>The design has to reach below the black cotton regardless — that is precisely why the report founds at 3.00 m. A basement slab at about 4.0 m takes the whole structure clear of the active zone, <em>removes</em> the expansive material instead of founding within it, and turns the ground floor into a suspended slab, which expansive soil demands anyway and which would otherwise be a cost with no return. <strong>No groundwater was found to 15 m</strong>, so there is no dewatering, no tanking against head, and no uplift case. The marginal excavation is roughly one metre beyond what was already required.</p>
+    </div>
+    <p>The caution: rockhead at 3.5 m in the southern holes. If that trend reaches the site, a 4.0 m basement excavates fractured basalt — rippable with a breaker rather than blasted, but a real cost and programme item. Rockhead deepens northward, to 15 m at the northernmost hole. <strong>Put the basement where the new boreholes show the deepest rockhead.</strong></p>
   </div></div>
 </section>
 
 <section>
-  <div class="shead"><div class="snum">04</div><h2>Four massing families, tested against the arithmetic</h2></div>
+  <div class="shead"><div class="snum">03</div><h2>The court comes all the way down</h2></div>
   <div class="sbody"><div class="snum"></div><div class="col">
-    <p>Common inputs: a 56 × 52 m buildable rectangle, G+6, ground floor 4.5 m, upper floors 3.6 m, target 13,700–14,700 m² GFA.</p>
+    <p>Massing Study 01 argued for lifting the basketball court from Level 1 to the roof, and that was agreed. With the real geometry there is a better move again: at 52% coverage the site holds an open court of roughly 41 by 31 metres between the buildings. The 32 × 19 m FIBA rectangle fits at grade, and at grade it costs nothing at all.</p>
+    <div class="tw">
+      <table>
+        <caption>What the court costs at each level</caption>
+        <thead><tr><th>&nbsp;</th><th>Level 1 · Brief 01</th><th>Roof · Study 01</th><th>Grade · R2</th></tr></thead>
+        <tbody>
+          <tr><td>Floor plate consumed</td><td class="no">900 m²</td><td class="yes">none</td><td class="yes">none</td></tr>
+          <tr><td>Deck structure</td><td class="no">5.0 kN/m²</td><td class="no">5.0 kN/m² roof</td><td class="yes">none</td></tr>
+          <tr><td>Impact isolation</td><td class="no">required</td><td class="yes">not required</td><td class="yes">not required</td></tr>
+          <tr><td>Ball-catch enclosure</td><td>4–6 m at mid-height</td><td>4–6 m on the skyline</td><td class="yes">perimeter fence</td></tr>
+          <tr><td>Waterproofing</td><td class="no">inverted roof under sports surface</td><td class="no">as Level 1</td><td class="yes">none</td></tr>
+          <tr><td>Supervision</td><td>deck level only</td><td class="no">remote</td><td class="yes">overlooked from every classroom</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>It also settles Art. 7 almost literally. The guideline wants the compound divided into five zones — buildings, flag ceremony, sports field, agricultural plot, greenery. Four of the five now occupy one south-facing court at grade.</p>
+    <div class="note">
+      <span class="tag">On the flag ceremony</span>
+      <p>The court is 1,288 m². At 0.5 m² per student in ranks that holds 2,576 — the entire primary school in one assembly, or any single school comfortably, with the staggered arrival the brief already assumes for stair and lift loading. Art. 12 permits it, since full-day operation is retained.</p>
+    </div>
+  </div></div>
+</section>
+
+<section>
+  <div class="shead"><div class="snum">04</div><h2>Scheme E — two bars and a link</h2></div>
+  <div class="sbody"><div class="snum"></div><div class="col">
+    <p class="lede">A U-plan open to the west. Two long bars run true east–west; a north–south link closes the eastern road boundary and shields the court from traffic noise and dust.</p>
+  </div></div>
+
+  <div class="dual">
+    <figure id="fig-plan"></figure>
+    <figure id="fig-axo"></figure>
+  </div>
+  <div class="sbody"><div class="snum"></div><div class="col">
     <div class="key">
-      <span><i style="background:var(--blue)"></i> Enclosed plate</span>
-      <span><i style="background:var(--amber)"></i> Outdoor deck</span>
-      <span><i style="background:var(--olive)"></i> Planted terrace</span>
+      <span><i style="background:var(--blue)"></i> Built volume</span>
+      <span><i style="background:var(--amber)"></i> Court and terraces</span>
+      <span><i style="background:var(--olive)"></i> Landscape wedge</span>
     </div>
-  </div></div>
+    <figcaption>Left: site plan, true north up, drawn from coordinates P1–P5. The dashed rectangle is the 32 × 19 m court clearance. Right: isometric from the south-west, showing the U opening toward the landscape wedge and the Wechecha view.</figcaption>
 
-  <div class="opts" id="opts"></div>
-
-  <div class="sbody"><div class="snum"></div><div class="col">
     <div class="tw">
       <table>
-        <caption>Comparison</caption>
-        <thead><tr><th>&nbsp;</th><th class="n">A ziggurat</th><th class="n">B cascade</th><th class="n">C courtyard</th><th class="n">D comb</th></tr></thead>
+        <caption>Areas</caption>
+        <thead><tr><th>Volume</th><th class="n">Footprint</th><th class="n">Levels</th><th class="n">GFA</th><th>Occupant</th></tr></thead>
         <tbody>
-          <tr><td>GFA achieved, m²</td><td class="n">12,400–14,100</td><td class="n">14,000</td><td class="n pick">13,400</td><td class="n">13,600</td></tr>
-          <tr><td>Largest deck below roof, m²</td><td class="n no">80</td><td class="n">336</td><td class="n pick">280</td><td class="n">300</td></tr>
-          <tr><td>Total outdoor, m²</td><td class="n">2,900</td><td class="n">3,100</td><td class="n pick">4,600</td><td class="n">3,400</td></tr>
-          <tr><td>Max depth to daylight, m</td><td class="n no">23</td><td class="n no">23</td><td class="n pick">9</td><td class="n">9</td></tr>
-          <tr><td>Facade area per m² GFA</td><td class="n">0.36</td><td class="n">0.38</td><td class="n pick">0.46</td><td class="n no">0.64</td></tr>
-          <tr><td>Distinct floor plates</td><td class="n no">7</td><td class="n">4</td><td class="n pick">4</td><td class="n">4</td></tr>
-          <tr><td>Transfer structure</td><td class="n yes">none</td><td class="n yes">none</td><td class="n yes">none</td><td class="n yes">none</td></tr>
-          <tr><td>Fits 56 × 52 m</td><td class="n yes">yes</td><td class="n yes">yes</td><td class="n yes">yes</td><td class="n no">no</td></tr>
+          <tr><td>Bar 3 — north</td><td class="n">850</td><td class="n">G+6</td><td class="n">5,950</td><td>Secondary; shared hall and library at ground</td></tr>
+          <tr><td>Link — east</td><td class="n">527</td><td class="n">G+6</td><td class="n">3,689</td><td>Primary upper</td></tr>
+          <tr><td>Bar 1 — south</td><td class="n">1,037</td><td class="n">G+3</td><td class="n">4,148</td><td>Kindergarten at G and L1; primary lower above</td></tr>
+          <tr class="total"><td>Total</td><td class="n">2,414 · 52%</td><td class="n">—</td><td class="n">13,787</td><td>against a target of 13,715</td></tr>
         </tbody>
       </table>
     </div>
-    <p>The convergence is genuine rather than staged: A fails on terrace size, B needs an internal void the moment you apply the brief's own 7.5 m daylight rule, and D does not fit the plot. Each failure points at the same answer.</p>
-  </div></div>
-</section>
+    <div class="tw">
+      <table>
+        <caption>Outdoor provision</caption>
+        <thead><tr><th>&nbsp;</th><th class="n">Area m²</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr class="pick"><td>Open court at grade</td><td class="n">1,288</td><td>Sports, flag ceremony, agricultural plot</td></tr>
+          <tr><td>Western and perimeter wedge</td><td class="n">916</td><td>Drop-off, greenery, the <em class="oro">Gaaddisa</em></td></tr>
+          <tr><td>Bar 1 roof at +14 m</td><td class="n">1,037</td><td>Primary deck, 61 × 17 m</td></tr>
+          <tr><td>Link roof</td><td class="n">527</td><td>Outdoor teaching</td></tr>
+          <tr><td>Bar 3 roof</td><td class="n">850</td><td>134 m running loop, plant</td></tr>
+          <tr class="total"><td>Total</td><td class="n">4,618</td><td>1.28 m² per student — 48% of it at grade</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Terracing again recovers the site area once over, but the balance has shifted: 48% of the outdoor provision is now at grade, against 37% in Study 01, and the court is a single contiguous room rather than five scattered decks. The basement — <strong>850 m² under Bar 3</strong>, not the full footprint — takes the bulk water tank, the rainwater cistern, the packaged treatment plant, generator and MV, bulk stores and kitchen support, with a ramp from the court.</p>
 
-<section>
-  <div class="shead"><div class="snum">05</div><h2>The recommended scheme — an eroding courtyard</h2></div>
-  <div class="sbody"><div class="snum"></div><div class="col">
-    <p class="lede">A ring around a central void, from which single large notches are removed as the building rises, spiralling around the four faces.</p>
+    <h3>Why this is the cost-effective answer, having argued the opposite</h3>
+    <p>Massing Study 01 discarded the multi-volume option on one number: facade area per square metre of floor, 0.64 against 0.46. That was too narrow a test, and I should not have decided on it alone.</p>
     <ul>
-      <li><strong>Outline 56 × 52 m</strong>, courtyard 32 × 14 m (448 m²)</li>
-      <li><strong>NE wing, 18 m deep</strong> (7 + 4 + 7) — classrooms to the road and the court</li>
-      <li><strong>SW wing, 20 m deep</strong> (7 + 6 + 7) — a six-metre learning street on the hot afternoon face, doubling as thermal buffer</li>
-      <li><strong>End wings, 12–14 m</strong> — three cores, stacked sanitary, specialist rooms</li>
+      <li><strong>Three separate regular rectangular volumes with seismic movement joints.</strong> In Zone 3 at 0.12 g this is the configuration you want — no torsional irregularity, no re-entrant corners, shear-wall centroid on the mass centroid in each volume. The eroding courtyard of Study 01, with set-backs spiralling around four faces, was plan-irregular at every level. That was architecture running ahead of engineering.</li>
+      <li><strong>Repetitive formwork.</strong> Three plain rectangular frames on one 8.0 m grid, no transfer, no long spans, no post-tensioning — the largest single cost lever in Ethiopian reinforced-concrete construction.</li>
+      <li><strong>Everything the elevated court would have cost is deleted:</strong> the 5.0 kN/m² deck, the impact isolation, the inverted roof beneath a sports surface, the ball-catch enclosure six floors up.</li>
+      <li><strong>Phased handover falls out of the massing.</strong> Bar 1 holds the kindergarten in four storeys and can be completed and occupied while the taller volumes proceed. Brief 01 §9.3 wanted exactly this and judged it difficult on a single-core building.</li>
     </ul>
+    <p>The honest cost against: three volumes mean three sets of cores, stairs and sanitary stacks. But Principle 3 — three schools, three entrances, three cores — was always going to buy those.</p>
 
-    <div class="stack" id="stack"></div>
-
-    <h3>Why it holds together</h3>
-    <p><strong>The court sets the wing depth, and the wing depth buys the learning street.</strong> Needing 19 m clear pushes the south-west wing to 20 m, which yields a six-metre daylit circulation spine. Design Principle 5 — corridors as informal learning area — arrives as a consequence of geometry rather than as an act of generosity that the gross-up factor then has to absorb.</p>
-    <p><strong>Few large notches, not many thin ones.</strong> A 14 × 14 m deck is an outdoor classroom for fifty children. A 1.5 m ledge is nothing at all. Each notch also self-shades the facade two floors beneath it, and the spiral gives the silhouette its identity without any geometry that costs money to build.</p>
-    <p><strong>No point on any floor is more than 9 m from daylight</strong>, from either the outer facade or the courtyard, and every classroom is double-aspect. Every column runs uninterrupted to foundation.</p>
-
-    <div class="note">
-      <span class="tag">The concept name comes from the regulation</span>
-      <p>Art. 2(12) defines <em class="oro">Gaaddisa Dubbisaa</em> — a shaded outdoor reading place under trees with good air. The courtyard should carry that name and that job. Roofed at high level with an open-sided louvred canopy, the void becomes a genuine solar chimney driving stack ventilation; the flag-ceremony space of Art. 7(2), usable through the kiremt rains; a 450 m² rainwater catchment feeding the agricultural terrace; and the one space every student passes through daily, overlooked by every corridor balcony — Principle 8, passive supervision, delivered by the plan rather than by cameras.</p>
-    </div>
-
-    <h3>The structural grid falls out of three constraints</h3>
-    <div class="tw">
-      <table>
-        <caption>Grid derivation — 8.0 m bays</caption>
-        <thead><tr><th>Requirement</th><th>Article</th><th class="n">Required</th><th>Resolved as</th><th class="n">Delivered</th></tr></thead>
-        <tbody>
-          <tr><td>Primary / secondary classroom</td><td>8.2(1), 8.3(1)</td><td class="n">56.00 m²</td><td>8.0 × 7.0</td><td class="n yes">56.00</td></tr>
-          <tr><td>Kindergarten classroom</td><td>8.1(1)</td><td class="n">63.00 m²</td><td>8.0 × 7.875</td><td class="n yes">63.00</td></tr>
-          <tr><td>Court clear rectangle</td><td>—</td><td class="n">32 × 19</td><td>roof plate</td><td class="n yes">clear</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>The kindergarten room keeps the same 8 m grid with its facade pushed out 0.875 m. Since the KG band is the widest part of a mass that only ever diminishes upward, that bulge is structurally free and becomes the podium edge. The guideline regulates area; the 7 × 9 in the parenthesis is descriptive.</p>
-    <p>Seven 8 m bays make 56 m — the full wing length, fourteen classrooms per full floor, 85 classrooms across six upper levels. Columns land on partition lines and in the circulation zone, never mid-room. That matters most at Level 1, where columns sized for seven storeys arrive at 900–1,200 mm square inside kindergarten accommodation that Art. 8.1 leaves no spare area in.</p>
+    <h3>Carried forward unchanged</h3>
+    <ul>
+      <li>The 8.0 m grid. Classroom 8.0 × 7.0 = 56.00 m²; kindergarten 8.0 × 7.875 = 63.00 m². Bars 17 m deep, 7 + 3 + 7.</li>
+      <li>Kindergarten in clusters of five around a shared <em class="oro">Golee</em> commons — four clusters, matching the four registrable KG units.</li>
+      <li>Vertically aligned sanitary stacks, roughly 144 WCs, waterborne, with the treatment plant in the basement and treated effluent irrigating the agricultural plot.</li>
+      <li>Deep verandas and perforated screens on the west-facing ends — which the corrected orientation reduces to the short ends of the bars rather than a long elevation.</li>
+    </ul>
   </div></div>
 </section>
 
 <section>
-  <div class="shead"><div class="snum">06</div><h2>On orientation — a respectful disagreement</h2></div>
-  <div class="sbody"><div class="snum"></div><div class="col">
-    <p>The brief calls rotating the dominant axis toward east–west "the single most valuable move available to the design." At 9° North I would weight this differently — and would test it rather than assume it.</p>
-    <p>The plot's edges run at roughly 45° to the cardinals. Rotating a building to true east–west inside a 45°-skewed corner site leaves triangular residual land on all four sides, which at 1.28 m² per student is the least affordable geometry available. Meanwhile the solar penalty of the site's natural grain is smaller than temperate intuition suggests: at this latitude the noon sun sits at 65–85°, and the governing problem is the low east and west sun at 10–30°, which <strong>no plan rotation solves</strong>. Only section does.</p>
-    <div class="note">
-      <span class="tag">Proposition</span>
-      <p>Hold the plan to the site grain. Solve solar in section. Classrooms face north-east and south-east — the better orientations — and the courtyard. The twenty-metre south-west wing puts its learning street, stairs and veranda on the hot afternoon face as a thermal buffer, not a habitable room. The road elevations take the dust and the noise and get the taut screened face; the quiet residential elevations get the cascading planted notches and the view to Wechecha.</p>
-    </div>
-    <p>An orientation study comparing the site-grain scheme against a rotated one is a Phase 1 deliverable either way. I would simply not presume the answer before drawing both.</p>
-  </div></div>
-</section>
-
-<section>
-  <div class="shead"><div class="snum">07</div><h2>What I need before Massing 02</h2></div>
+  <div class="shead"><div class="snum">05</div><h2>Open points</h2></div>
   <div class="sbody"><div class="snum"></div><div class="col">
     <div class="asks">
-      <div class="ask"><div><h4>The topographic survey and boundary dimensions</h4><p>Plus the Ambo Road reservation. Every plate figure on this page is parametric until this lands — the 56 × 52 m rectangle is a working assumption derived from the area, not from a drawing.</p></div></div>
-      <div class="ask"><div><h4>A decision on the sport inversion</h4><p>It is the move that unlocks the courtyard. Keep the court at Level 1 and it consumes the 900 m² of plate that makes the courtyard possible.</p></div></div>
-      <div class="ask"><div><h4>Is a basement viable?</h4><p>Brief 01 never raises one. A single 2,400 m² basement absorbs the water tanks, the treatment plant, plant rooms, bulk stores, kitchen support and staff parking — releasing 500–800 m² of ground floor back to teaching and play. At this density it may be the cheapest area on the site. It needs the geotechnical report and the water table before it can be priced.</p></div></div>
-      <div class="ask"><div><h4>Permitted site coverage and setbacks</h4><p>The scheme sits at 63% outline coverage. If the local plan caps it at 50%, this study restarts.</p></div></div>
-      <div class="ask"><div><h4>The budget envelope</h4><p>Total and per square metre, to calibrate facade ambition against the G+6 economic ceiling the brief identifies. Cost per m² rises materially above G+5.</p></div></div>
+      <div class="ask"><div><h4>Which boundary is the Ambo Road?</h4><p>It fixes the three entrances, the drop-off, and which face takes the acoustic and dust screening. The scheme assumes the eastern boundary is the principal road — hence the link placed there as a shield, with the kindergarten at the far south-west, quietest corner. Confirm against the road hierarchy.</p></div></div>
+      <div class="ask"><div><h4>Reconcile the borehole positions with NATM</h4><p>Datum, coordinate basis, and whether the report relates to this parcel. Then commission four holes to 15 m inside the polygon, with swell pressure and active-zone depth reported. A full query sheet is in the ground review.</p></div></div>
+      <div class="ask"><div><h4>Road reservation setbacks on each frontage</h4><p>Still unquantified. The scheme carries 2–3 m and has eleven percentage points of coverage in hand, so it is not fragile — but the court dimension is, and the court is where the sports and the flag ceremony both live.</p></div></div>
+      <div class="ask"><div><h4>Did "move the court" also mean the courtyard?</h4><p>Under R2 the two move together — the enclosed courtyard becomes the open court at grade — so both readings land in the same place. Flagging it only so the record is clear.</p></div></div>
+    </div>
+    <div class="note warn">
+      <span class="tag">One landscape constraint worth stating early</span>
+      <p>No high-water-demand trees near the buildings on this soil — eucalyptus in particular must stay beyond about 1.5 times its mature height from any footing, or it will drive seasonal heave and settlement directly. This runs against the guideline's <em class="oro">Gaaddisa Dubbisaa</em>, a reading place under trees, and against the Art. 7(5) greenery. Both belong in the court and the western wedge, at distance, or in raised planters.</p>
     </div>
   </div></div>
 </section>
 
 <footer>
   <span>Rapha Engineering and Consulting — working notes</span>
-  <span>Massing Study 01 · Phase 1 · draft for discussion</span>
+  <span>Massing Study R2 · Phase 1 · draft for discussion</span>
 </footer>
 
 </div>
@@ -487,169 +363,150 @@ footer{border-top:1.5px solid var(--ink);margin-top:56px;padding:22px 0 60px;
 (function(){
   "use strict";
 
-  var LV = [0, 4.5, 8.1, 11.7, 15.3, 18.9, 22.5, 26.1];
-  function box(x0,y0,x1,y1,a,b,t){ return {x0:x0,y0:y0,x1:x1,y1:y1,z0:LV[a],z1:LV[b],t:t||"plate"}; }
+  /* Local coordinates: x = Easting − 464000, y = Northing − 996700 */
+  var SITE = [[112.500,133.918],[109.918,49.453],[41.882,61.305],[58.980,127.622],[66.779,128.861]];
+  var BH = [["BH-1",73,13],["BH-2",91,5],["BH-3",81,-3],["BH-4",95,-9],["BH-5",77,-26],["BH-6",99,-35]];
 
-  /* ---- A · concentric ziggurat, 1.0 m step per side ---- */
-  var A = [];
-  for(var n=0;n<7;n++) A.push(box(n,n,56-n,46-n,n,n+1));
+  /* Scheme E volumes: [x0,y0,x1,y1,levels] */
+  var BAR1 = [48,62,109,79,4], LINK = [92,79,109,110,7], BAR3 = [59,110,109,127,7];
+  /* court is bounded west by the site edge P3–P4 */
+  function westAt(y){ return 41.882 + 0.25783*(y-61.305); }
+  var COURT = [[westAt(79),79],[92,79],[92,110],[westAt(110),110]];
+  var FIBA  = [56,85,88,104];
 
-  /* ---- B · single-sided cascade, 6 m steps ---- */
-  var B = [
-    box(0,0,56,46,0,1),
-    box(0,0,56,40,1,3),
-    box(0,0,56,34,3,5),
-    box(0,0,56,28,5,7)
-  ];
+  function pts(a){ return a.map(function(p){ return p[0].toFixed(2)+","+(-p[1]).toFixed(2); }).join(" "); }
+  function rectPts(r){ return pts([[r[0],r[1]],[r[2],r[1]],[r[2],r[3]],[r[0],r[3]]]); }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
 
-  /* ---- C · eroding courtyard. Ring bars, notched upward ---- */
-  /* Ring bars: NE y0–18, SW y32–52, NW x0–12, SE x44–56. Court x12–44, y18–32.
-     Each notch leaves a deck on the roof of the storey below it.            */
-  var C = [];
+  function svg(vb, body, label){
+    return '<svg viewBox="'+vb+'" role="img" aria-label="'+esc(label)+'">'+body+'</svg>';
+  }
+  function txt(x,y,s,o){
+    o = o || {};
+    return '<text x="'+x.toFixed(1)+'" y="'+(-y).toFixed(1)+'" fill="'+(o.fill||"var(--ink3)")+
+      '" font-size="'+(o.size||3.4)+'" font-family="var(--f-data)" letter-spacing="0.25"'+
+      ' text-anchor="'+(o.anchor||"middle")+'" dominant-baseline="'+(o.base||"middle")+'">'+esc(s)+'</text>';
+  }
+  function northArrow(x,y){
+    return '<g stroke="var(--ink2)" stroke-width="0.5" fill="none">'+
+      '<line x1="'+x+'" y1="'+(-y)+'" x2="'+x+'" y2="'+(-(y+9))+'"/>'+
+      '<polyline points="'+(x-2)+','+(-(y+6))+' '+x+','+(-(y+9.5))+' '+(x+2)+','+(-(y+6))+'"/></g>'+
+      txt(x,y+13,"N",{size:4,fill:"var(--ink2)"});
+  }
+
+  /* ---------- Figure 1 · site and borehole positions ---------- */
   (function(){
-    var ne=[0,56], sw=[0,56], nwOn=true, seOn=true;
-    var plan = [
-      {a:0,b:1},                                  // Ground — full ring
-      {a:1,b:2, sw:[0,42], deckKind:"deck"},      // L1 kindergarten — 280 m² soft play
-      {a:2,b:3},                                  // L2
-      {a:3,b:4, se:false, deckKind:"green"},      // L3 — 168 m² agricultural terrace
-      {a:4,b:5, ne:[0,42], deckKind:"green"},     // L4 — 252 m² outdoor teaching
-      {a:5,b:6, sw:[14,42], deckKind:"deck"},     // L5 — 280 m² study terrace
-      {a:6,b:7, nw:false, deckKind:"green"}       // L6 — 168 m² greenery
-    ];
-    plan.forEach(function(p){
-      var k = p.deckKind || "deck";
-      // a notch leaves its deck on the slab it vacates, at level p.a
-      if(p.ne) C.push(box(p.ne[1],0,ne[1],18,p.a,p.a,k));
-      if(p.sw){
-        if(p.sw[1] < sw[1]) C.push(box(p.sw[1],32,sw[1],52,p.a,p.a,k));
-        if(p.sw[0] > sw[0]) C.push(box(sw[0],32,p.sw[0],52,p.a,p.a,k));
-      }
-      if(p.nw===false && nwOn) C.push(box(0,18,12,32,p.a,p.a,k));
-      if(p.se===false && seOn) C.push(box(44,18,56,32,p.a,p.a,k));
-
-      if(p.ne) ne=p.ne;
-      if(p.sw) sw=p.sw;
-      if(p.nw===false) nwOn=false;
-      if(p.se===false) seOn=false;
-
-      C.push(box(ne[0],0,ne[1],18,p.a,p.b));
-      C.push(box(sw[0],32,sw[1],52,p.a,p.b));
-      if(nwOn) C.push(box(0,18,12,32,p.a,p.b));
-      if(seOn) C.push(box(44,18,56,32,p.a,p.b));
+    var b = [];
+    // site
+    b.push('<polygon points="'+pts(SITE)+'" fill="var(--blue)" fill-opacity="0.10" stroke="var(--blue)" stroke-width="0.8"/>');
+    SITE.forEach(function(p,i){
+      b.push('<circle cx="'+p[0]+'" cy="'+(-p[1])+'" r="1.1" fill="var(--blue)"/>');
+      b.push(txt(p[0]+(p[0]>90?4.5:-4.5), p[1]+2, "P"+(i+1), {fill:"var(--blue)",size:3.2}));
     });
-    // roof — the 32 × 19 court and the running loop, on the last plate
-    C.push(box(ne[0],0,ne[1],18,7,7,"deck"));
-    C.push(box(sw[0],32,sw[1],52,7,7,"deck"));
+    // gap dimension from southern boundary to BH-1
+    b.push('<line x1="73" y1="-49.9" x2="73" y2="-13" stroke="var(--brick)" stroke-width="0.5" stroke-dasharray="2 1.6"/>');
+    b.push(txt(76.5, 31, "36 m", {fill:"var(--brick)", anchor:"start", size:3.6}));
+    // boreholes
+    var bx=[], by=[];
+    BH.forEach(function(h){ bx.push(h[1]); by.push(h[2]); });
+    b.push('<rect x="'+(Math.min.apply(null,bx)-6)+'" y="'+(-(Math.max.apply(null,by)+6))+
+           '" width="'+(Math.max.apply(null,bx)-Math.min.apply(null,bx)+12)+
+           '" height="'+(Math.max.apply(null,by)-Math.min.apply(null,by)+12)+
+           '" fill="var(--brick)" fill-opacity="0.07" stroke="var(--brick)" stroke-width="0.5" stroke-dasharray="3 2"/>');
+    BH.forEach(function(h){
+      b.push('<circle cx="'+h[1]+'" cy="'+(-h[2])+'" r="1.3" fill="none" stroke="var(--brick)" stroke-width="0.7"/>');
+      b.push(txt(h[1]+4.5, h[2], h[0], {fill:"var(--brick)", anchor:"start", size:3}));
+    });
+    b.push(txt(70, -44, "NATM investigation area", {fill:"var(--brick)", size:3.6}));
+    b.push(txt(77, 95, "SITE", {fill:"var(--blue)", size:5}));
+    b.push(northArrow(48, 100));
+    document.getElementById("fig-context").innerHTML =
+      svg("30 -142 96 194", b.join(""), "Plan showing the site polygon and the NATM borehole cluster lying south of it");
+    document.getElementById("cap-context").innerHTML =
+      "The surveyed polygon against the six NATM boreholes, plotted from the coordinates in each document. "+
+      "The eastings overlap; the northings do not. Every hole falls between 36 and 84 m south of the southern boundary.";
   })();
 
-  /* ---- D · comb — only two bars fit the 56 m dimension ---- */
-  var D = [
-    box(0,0,56,18,0,7), box(0,26,56,44,0,7), box(0,18,10,26,0,7)
-  ];
-
-  var FILL = {
-    plate:{ t:"var(--blue)",   r:"var(--blue)",  f:"var(--blue)"  },
-    deck: { t:"var(--amber)",  r:"var(--amber)", f:"var(--amber)" },
-    green:{ t:"var(--olive)",  r:"var(--olive)", f:"var(--olive)" }
-  };
-  var OP = { t:1.0, r:0.72, f:0.5 };
-
-  var K = 3.05, C30 = 0.8660254;
-
-  function P(x,y,z){ return [ (x-y)*C30*K, ((x+y)*0.5 - z)*K ]; }
-  function poly(pts){ return pts.map(function(p){ return p[0].toFixed(1)+","+p[1].toFixed(1); }).join(" "); }
-
-  function faces(b){
-    var o=[];
-    o.push({p:[P(b.x0,b.y0,b.z1),P(b.x1,b.y0,b.z1),P(b.x1,b.y1,b.z1),P(b.x0,b.y1,b.z1)], k:"t"});
-    if(b.z1>b.z0){
-      o.push({p:[P(b.x0,b.y1,b.z1),P(b.x1,b.y1,b.z1),P(b.x1,b.y1,b.z0),P(b.x0,b.y1,b.z0)], k:"f"});
-      o.push({p:[P(b.x1,b.y0,b.z1),P(b.x1,b.y1,b.z1),P(b.x1,b.y1,b.z0),P(b.x1,b.y0,b.z0)], k:"r"});
-    }
-    return o;
-  }
-
-  /* All four options share one viewBox, so they compare at true scale. */
-  function bounds(boxes, acc){
-    boxes.forEach(function(b){
-      faces(b).forEach(function(f){
-        f.p.forEach(function(p){
-          if(p[0]<acc[0])acc[0]=p[0]; if(p[0]>acc[2])acc[2]=p[0];
-          if(p[1]<acc[1])acc[1]=p[1]; if(p[1]>acc[3])acc[3]=p[1];
-        });
-      });
+  /* ---------- Figure 2 · Scheme E site plan ---------- */
+  (function(){
+    var b = [];
+    b.push('<polygon points="'+pts(SITE)+'" fill="var(--olive)" fill-opacity="0.13" stroke="var(--ink3)" stroke-width="0.6" stroke-dasharray="3 2"/>');
+    b.push('<polygon points="'+pts(COURT)+'" fill="var(--amber)" fill-opacity="0.28" stroke="none"/>');
+    b.push('<rect x="'+FIBA[0]+'" y="'+(-FIBA[3])+'" width="'+(FIBA[2]-FIBA[0])+'" height="'+(FIBA[3]-FIBA[1])+
+           '" fill="none" stroke="var(--amber)" stroke-width="0.7" stroke-dasharray="2.5 1.8"/>');
+    b.push(txt((FIBA[0]+FIBA[2])/2, (FIBA[1]+FIBA[3])/2, "32 × 19", {fill:"var(--amber)", size:3.6}));
+    [[BAR1,"KG + PRIMARY LOWER","G+3"],[LINK,"PRIMARY","G+6"],[BAR3,"SECONDARY","G+6"]].forEach(function(v){
+      var r=v[0];
+      b.push('<polygon points="'+rectPts(r)+'" fill="var(--blue)" fill-opacity="0.55" stroke="var(--blue)" stroke-width="0.7"/>');
+      var cx=(r[0]+r[2])/2, cy=(r[1]+r[3])/2;
+      var vert = (r[2]-r[0]) < (r[3]-r[1]);
+      if(vert){
+        b.push('<g transform="rotate(-90 '+cx+' '+(-cy)+')">'+
+               txt(cx,cy+2.2,v[1],{fill:"var(--paper)",size:3.4})+
+               txt(cx,cy-2.6,v[2],{fill:"var(--paper)",size:3.2})+'</g>');
+      } else {
+        b.push(txt(cx,cy+2.2,v[1],{fill:"var(--paper)",size:3.8}));
+        b.push(txt(cx,cy-2.8,v[2],{fill:"var(--paper)",size:3.2}));
+      }
     });
-    return acc;
-  }
+    b.push(txt(66, 96, "OPEN COURT", {fill:"var(--amber)", size:4}));
+    b.push(txt(66, 91.5, "sports · flag ceremony · agriculture", {fill:"var(--amber)", size:2.9}));
+    b.push(txt(46, 71, "wedge", {fill:"var(--olive)", size:3.2, anchor:"end"}));
+    b.push(northArrow(44, 118));
+    document.getElementById("fig-plan").innerHTML =
+      svg("34 -140 84 100", b.join(""), "Scheme E site plan, true north up");
+  })();
 
-  function draw(boxes, vb, label){
+  /* ---------- Figure 3 · Scheme E isometric, viewed from the south-west ---------- */
+  (function(){
+    var LVH = function(n){ return n<=0 ? 0 : 4.5 + (n-1)*3.6; };
+    var X0=120, Y0=140;
+    function box(r,levels,kind){
+      return { x0:X0-r[2], x1:X0-r[0], y0:Y0-r[3], y1:Y0-r[1], z0:0, z1:LVH(levels), t:kind||"plate" };
+    }
+    function flat(r,levels,kind){
+      var z=LVH(levels);
+      return { x0:X0-r[2], x1:X0-r[0], y0:Y0-r[3], y1:Y0-r[1], z0:z, z1:z, t:kind };
+    }
+    var boxes = [
+      box(BAR1,4), box(LINK,7), box(BAR3,7),
+      flat(BAR1,4,"deck"), flat(LINK,7,"deck"), flat(BAR3,7,"deck"),
+      flat([50,79,92,110],0,"court")
+    ];
+
+    var FILL = { plate:"var(--blue)", deck:"var(--amber)", court:"var(--amber)" };
+    var OP = { t:1.0, r:0.70, f:0.48 };
+    var K = 2.5, C30 = 0.8660254;
+    function P(x,y,z){ return [ (x-y)*C30*K, ((x+y)*0.5 - z)*K ]; }
+    function poly(a){ return a.map(function(p){ return p[0].toFixed(1)+","+p[1].toFixed(1); }).join(" "); }
+    function faces(b){
+      var o=[{p:[P(b.x0,b.y0,b.z1),P(b.x1,b.y0,b.z1),P(b.x1,b.y1,b.z1),P(b.x0,b.y1,b.z1)],k:"t"}];
+      if(b.z1>b.z0){
+        o.push({p:[P(b.x0,b.y1,b.z1),P(b.x1,b.y1,b.z1),P(b.x1,b.y1,b.z0),P(b.x0,b.y1,b.z0)],k:"f"});
+        o.push({p:[P(b.x1,b.y0,b.z1),P(b.x1,b.y1,b.z1),P(b.x1,b.y1,b.z0),P(b.x1,b.y0,b.z0)],k:"r"});
+      }
+      return o;
+    }
     var sorted = boxes.slice().sort(function(a,b){
       var ka=(a.x0+a.x1+a.y0+a.y1)/2, kb=(b.x0+b.x1+b.y0+b.y1)/2;
       return ka===kb ? a.z0-b.z0 : ka-kb;
     });
-    var parts = [];
+    var parts=[], minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9;
     sorted.forEach(function(b){
-      var col = FILL[b.t] || FILL.plate;
       faces(b).forEach(function(f){
-        parts.push('<polygon points="'+poly(f.p)+'" fill="'+col[f.k]+'" fill-opacity="'+OP[f.k]+
-                   '" stroke="var(--paper)" stroke-width="0.7" stroke-linejoin="round"/>');
+        f.p.forEach(function(p){
+          if(p[0]<minX)minX=p[0]; if(p[0]>maxX)maxX=p[0];
+          if(p[1]<minY)minY=p[1]; if(p[1]>maxY)maxY=p[1];
+        });
+        parts.push('<polygon points="'+poly(f.p)+'" fill="'+FILL[b.t]+'" fill-opacity="'+
+          (b.t==="court" ? 0.30 : OP[f.k])+'" stroke="var(--paper)" stroke-width="0.6" stroke-linejoin="round"/>');
       });
     });
-    return '<svg viewBox="'+vb+'" role="img" aria-label="'+label+'">'+parts.join("")+'</svg>';
-  }
-
-  var OPTIONS = [
-    { id:"A", name:"Concentric ziggurat", v:"Discard", vc:"v-out", boxes:A,
-      text:"Plates inset equally on all four sides, as the brief’s Figure 6 implies. At 1.5 m steps it reaches 12,425 m² — 1,300 short. At 1.0 m steps it reaches 14,112 m² with terraces one metre wide. The largest usable deck below roof level is about 80 m², and it needs seven formwork sets." },
-    { id:"B", name:"Single-sided cascade", v:"Converges on C", vc:"v-out", boxes:B,
-      text:"Full-height slab on the road edge, stepping down to the south-west. Reaches 14,000 m² with three usable 6 × 56 m terraces. But the plate is 46 m deep, and the brief’s own 7.5 m daylight rule forces an internal void — at which point this is option C with one side missing." },
-    { id:"C", name:"Eroding courtyard", v:"Recommended", vc:"v-in", boxes:C,
-      text:"A ring around a 32 × 14 m void, with single large notches removed as it rises, spiralling the four faces. 13,400 m², 4,600 m² of outdoor space, nothing more than 9 m from daylight, every column straight to foundation, four floor plates." },
-    { id:"D", name:"Comb of three bars", v:"Does not fit", vc:"v-out", boxes:D,
-      text:"Three 18 m bars with 8 m gaps need 70 m in one direction; the plot offers 56. It degenerates to two bars — option C with both ends open — and carries about 50% more external wall per m² of floor, in the order of 6–8% on total build cost." }
-  ];
-
-  var acc = [1e9,1e9,-1e9,-1e9], pad = 10;
-  OPTIONS.forEach(function(o){ bounds(o.boxes, acc); });
-  var VB = [(acc[0]-pad).toFixed(1),(acc[1]-pad).toFixed(1),
-            (acc[2]-acc[0]+pad*2).toFixed(1),(acc[3]-acc[1]+pad*2).toFixed(1)].join(" ");
-
-  document.getElementById("opts").innerHTML = OPTIONS.map(function(o){
-    return '<article class="opt"><figure>'+
-      draw(o.boxes, VB, "Option "+o.id+" — "+o.name+", isometric massing")+'</figure>'+
-      '<div class="cap"><div class="oid">Option '+o.id+'</div>'+
-      '<h4>'+o.name+'</h4>'+
-      '<span class="verdict '+o.vc+'">'+o.v+'</span>'+
-      '<p>'+o.text+'</p></div></article>';
-  }).join("");
-
-  /* ---- stacking chart ---- */
-  var STACK = [
-    ["Roof", 0, 1316, "Court 32 × 19, 170 m running loop, plant"],
-    ["L6", 1316, 168, "Secondary, departmental rooms"],
-    ["L5", 1484, 280, "Secondary, ICT, study terrace"],
-    ["L4", 1764, 252, "Primary upper, science kit rooms"],
-    ["L3", 2016, 168, "Primary, agricultural terrace"],
-    ["L2", 2184, 0, "Primary lower, SEN centre, day care"],
-    ["L1", 2184, 280, "Kindergarten — four Golee clusters"],
-    ["Ground", 2464, 0, "Hall, libraries, workshop, labs, three entrances"]
-  ];
-  var MAXW = 2464 + 320;
-  document.getElementById("stack").innerHTML =
-    '<div class="srow" style="border-bottom:1px solid var(--rule2)">'+
-      '<span class="lv">Level</span><span class="lv">Plate and deck</span><span class="lv" style="text-align:right">m²</span></div>'+
-    STACK.map(function(r){
-      var pw = (r[1]/MAXW*100).toFixed(1), dw = (r[2]/MAXW*100).toFixed(1);
-      return '<div class="srow"><span class="lv">'+r[0]+'</span>'+
-        '<span class="bars" title="'+r[3]+'">'+
-          (r[1]? '<b class="b-plate" style="width:'+pw+'%"></b>':'')+
-          (r[2]? '<b class="b-deck" style="width:'+dw+'%"></b>':'')+
-        '</span>'+
-        '<span class="amt">'+(r[1]||"—")+'</span></div>';
-    }).join("")+
-    '<div class="srow" style="border-top:1px solid var(--rule2);border-bottom:none">'+
-      '<span class="lv">Total</span><span class="lv" style="color:var(--ink2)">13,412 m² enclosed · 2,468 m² deck · 448 m² courtyard</span>'+
-      '<span class="amt" style="color:var(--ink)">13,412</span></div>';
+    var pad=8;
+    var vb=[(minX-pad).toFixed(1),(minY-pad).toFixed(1),
+            (maxX-minX+pad*2).toFixed(1),(maxY-minY+pad*2).toFixed(1)].join(" ");
+    document.getElementById("fig-axo").innerHTML =
+      svg(vb, parts.join(""), "Scheme E isometric from the south-west");
+  })();
 })();
 </script>

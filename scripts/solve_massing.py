@@ -44,6 +44,8 @@ SB     = {"west": 3.0, "east": 2.0, "south": 2.0, "north": 2.0}
 GAPS   = (3.0, 4.0, 5.0)
 TOL    = 0.0           # target the full requirement; H6 allows 3% tolerance
 MINLEN = 24.0          # shortest sensible bar
+MINPLATE = {"kindergarten": 0.0, "primary": 500.0, "secondary": 500.0}
+                       # a plate below ~500 m2 carries too few classrooms per core
 Y_LO, Y_HI = 61.0, 128.0
 
 def west_at(y):  return 41.882 + 0.25783 * (y - 61.305)
@@ -74,19 +76,29 @@ def play_fits(w, d, need):
     return (w >= L and d >= S) or (w >= S and d >= L)
 
 def size_bar(school, depth, lmax, req, roof_playground):
-    """Fewest levels and shortest length meeting the GFA requirement in a band
-       of the given depth. Returns (levels, length) or None."""
+    """Level count and bar length meeting the GFA requirement in a band of the
+       given depth, chosen to MINIMISE FOOTPRINT (ties broken toward fewer
+       levels). Footprint, not storeys, is what competes with open ground on
+       this site - see docs/05-parametric-design-brief.md section 12."""
+    best = None
     for n in range(1, MAXLEV[school] + 1):
         L = req[school] * (1 - TOL) / n / depth
         if roof_playground:
             pl, ps = PLAY[school]
             if depth < ps:
                 continue
-            L = max(L, pl)
+            L = max(L, pl)          # the roof must still hold the playing ground
         L = max(L, MINLEN)
-        if L <= lmax:
-            return (n, round(L, 2))
-    return None
+        f = L * depth
+        if f < MINPLATE[school]:    # vertical-efficiency floor
+            f = MINPLATE[school]
+            L = f / depth
+        if L > lmax:
+            continue
+        cand = (round(f, 2), n, round(L, 2))
+        if best is None or cand < best:
+            best = cand
+    return (best[1], best[2]) if best else None
 
 results = {}
 

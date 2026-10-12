@@ -510,41 +510,40 @@ an open court at grade on three sides, open west.
 
 Volumes are listed south to north.
 
-**`T1_three_bars__B_compliant`** — recommended default
-footprint 2,725 m² (59.0%), GFA 13,630 m², open at grade 1,893 m², joints 3.0 m
+**`T1_three_bars__B_compliant`** — recommended under the compliant schedule
+footprint 2,465 m² (53.4%), GFA 13,631 m², open at grade 2,153 m², joints 3.0 m
 
 | Volume | x₀ | y₀ | x₁ | y₁ | L × D | Footprint | Levels | GFA |
 |---|---|---|---|---|---|---|---|---|
 | Kindergarten | 54.96 | 62.00 | 108.30 | 79.00 | 53.3 × 17.0 | 906.8 | G+2 | 2,720 |
-| Primary | 60.59 | 82.00 | 108.91 | 103.00 | 48.3 × 21.0 | 1014.7 | G+5 | 6,088 |
-| Secondary | 69.47 | 106.00 | 109.65 | 126.00 | 40.2 × 20.0 | 803.6 | G+5 | 4,822 |
+| Secondary | 74.47 | 82.00 | 108.91 | 102.00 | 34.4 × 20.0 | 688.8 | G+6 | 4,822 |
+| Primary | 68.20 | 105.00 | 109.62 | 126.00 | 41.4 × 21.0 | 869.8 | G+6 | 6,089 |
 
-**`T1_three_bars__A_client`**
-footprint 2,483 m² (53.8%), GFA 8,106 m², open at grade 2,135 m², joints 3.0 m
+**`T1_three_bars__A_client`** — recommended under the client programme as issued
+footprint 1,842 m² (39.9%), GFA 8,459 m², open at grade 2,776 m², joints 3.0 m
 
 | Volume | x₀ | y₀ | x₁ | y₁ | L × D | Footprint | Levels | GFA |
 |---|---|---|---|---|---|---|---|---|
-| Kindergarten | 52.14 | 62.00 | 108.30 | 79.00 | 56.2 × 17.0 | 954.7 | G+1 | 1,909 |
-| Secondary | 72.79 | 82.00 | 108.91 | 102.00 | 36.1 × 20.0 | 722.4 | G+2 | 2,167 |
-| Primary | 69.33 | 105.00 | 109.62 | 125.00 | 40.3 × 20.0 | 805.8 | G+4 | 4,029 |
+| Kindergarten | 70.86 | 62.00 | 108.30 | 79.00 | 37.4 × 17.0 | 636.5 | G+2 | 1,909 |
+| Primary | 80.13 | 82.00 | 108.91 | 102.00 | 28.8 × 20.0 | 575.6 | G+6 | 4,029 |
+| Secondary | 79.62 | 105.00 | 109.62 | 126.00 | 30.0 × 21.0 | 630.0 | G+3 | 2,520 |
 
 **`T2_court__A_client`**
-footprint 2,192 m² (47.5%), GFA 8,530 m², open at grade 2,426 m², joints 3.0 m, court 780 m²
+footprint 1,644 m² (35.6%), GFA 8,531 m², open at grade 2,974 m², joints 3.0 m, court 780 m²
 
 | Volume | x₀ | y₀ | x₁ | y₁ | L × D | Footprint | Levels | GFA |
 |---|---|---|---|---|---|---|---|---|
-| Kindergarten | 52.14 | 62.00 | 108.30 | 79.00 | 56.2 × 17.0 | 954.7 | G+1 | 1,909 |
+| Kindergarten | 70.86 | 62.00 | 108.30 | 79.00 | 37.4 × 17.0 | 636.5 | G+2 | 1,909 |
 | Secondary | 90.91 | 82.00 | 108.91 | 106.00 | 18.0 × 24.0 | 432.0 | G+5 | 2,592 |
-| Primary | 62.34 | 109.00 | 109.74 | 126.00 | 47.4 × 17.0 | 805.8 | G+4 | 4,029 |
+| Primary | 75.88 | 109.00 | 109.74 | 126.00 | 33.9 × 17.0 | 575.6 | G+6 | 4,029 |
 | Court | 56.41 | 82.00 | 88.91 | 106.00 | 32.5 × 24.0 | 780 | — | — |
 
 `T2_court__B_compliant` is **infeasible** and is recorded as such in
 `seed_layouts.json`.
 
-All three feasible seeds pass every hard constraint in §11 — run
-`python3 -I scripts/validate_scheme.py data/scheme_T1_B.json` to confirm. They
-minimise levels then bar length; they do not optimise daylight, shadow or
-circulation, which is the agent's job.
+Worked schemes for the two T1 seeds, with gates, basement and open spaces filled in,
+are `data/scheme_T1_B.json` and `data/scheme_T1_A.json`. Both pass 20/20 hard
+constraints — run `python3 -I scripts/validate_scheme.py data/scheme_T1_A.json`.
 
 ### 8.2 Programme-to-volume assignment rules
 
@@ -693,6 +692,42 @@ Minimise:
    above G+5 with lifts, second escape stairs and pumped water storage.
 
 Report all eight for every candidate.
+
+### 12.1 The tie-break that matters — do not get this wrong
+
+When a school's required floor area can be housed by several
+(levels × footprint) combinations, **choose the one with the smallest
+footprint**, not the one with the fewest storeys. On this site open ground is
+the binding scarcity, and every square metre of plate is a square metre of
+playground forgone.
+
+The first version of `solve_massing.py` returned the first level count that
+fitted — that is, it minimised storeys — and the result was that cutting the
+programme by 41% shrank the footprint by only 9%. The kindergarten plate
+actually *grew*. Sizing to minimum footprint instead frees 641 m² of open
+ground under the client programme and 260 m² under the compliant one, at no
+cost in GFA.
+
+Storeys are not free, so two floors are set under the search:
+
+| Floor | Value | Why |
+|---|---|---|
+| `MINPLATE` for primary and secondary | 500 m² | below this a plate carries too few classrooms to justify a core, stair and lift |
+| Playing ground on the volume's own roof | KG 150, primary 500, **secondary 600 m²** | the roof must still hold the rectangle |
+
+**Under topology T1 the second floor binds before the first.** Scenario A needs
+only 310 m² of plate for the secondary school at G+6, but its 30 × 20 m playing
+ground forces 600 m². Past that point the playgrounds set the footprint, not the
+schedule — which is why T1 does not shrink in proportion to the programme.
+Moving a playing ground to grade, where the site allows it, is the lever that
+breaks the floor.
+
+### 12.2 Kindergarten levels — a judgement, not an optimisation
+
+Minimising footprint pushes the kindergarten to three levels in every scenario.
+Holding it to two, which is better for four- to six-year-olds, costs **318 m² of
+open ground** under the client programme. Present both; do not let the optimiser
+decide it silently.
 
 ---
 

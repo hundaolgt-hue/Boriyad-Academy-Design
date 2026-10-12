@@ -22,13 +22,13 @@
         "placement": "roof"
       }
     },
-    "primary": {
-      "x0": 60.59,
+    "secondary": {
+      "x0": 74.47,
       "y0": 82.0,
       "x1": 108.91,
-      "y1": 103.0,
-      "levels": 6,
-      "corridor_m": 7.0,
+      "y1": 102.0,
+      "levels": 7,
+      "corridor_m": 6.0,
       "entrance": {
         "x": 110.41,
         "y": 85.0
@@ -37,15 +37,15 @@
         "placement": "roof"
       }
     },
-    "secondary": {
-      "x0": 69.47,
-      "y0": 106.0,
-      "x1": 109.65,
+    "primary": {
+      "x0": 68.2,
+      "y0": 105.0,
+      "x1": 109.62,
       "y1": 126.0,
-      "levels": 6,
-      "corridor_m": 6.0,
+      "levels": 7,
+      "corridor_m": 7.0,
       "entrance": {
-        "x": 79.47,
+        "x": 78.2,
         "y": 127.5
       },
       "playground": {
@@ -54,9 +54,9 @@
     }
   },
   "basement": {
-    "under": "secondary",
+    "under": "primary",
     "depth_m": 4.0,
-    "area_m2": 700
+    "area_m2": 600
   },
   "open_spaces": {
     "flag_m2": 640,

@@ -1,0 +1,298 @@
+{
+  "hard": [
+    {
+      "id": "H1",
+      "rule": "every volume inside the boundary polygon and >= 2.0 m clear of it",
+      "tolerance_m": 0.05
+    },
+    {
+      "id": "H2",
+      "rule": "volumes mutually disjoint with a clear joint >= joint_m",
+      "min_m": 3.0
+    },
+    {
+      "id": "H3",
+      "rule": "total footprint <= 63% of site",
+      "max_m2": 2909.4
+    },
+    {
+      "id": "H4",
+      "rule": "levels <= 7; kindergarten <= 3",
+      "max_levels": {
+        "kindergarten": 3,
+        "primary": 7,
+        "secondary": 7
+      }
+    },
+    {
+      "id": "H5",
+      "rule": "height above ground excluding parapet",
+      "max_m": 27.0
+    },
+    {
+      "id": "H6",
+      "rule": "GFA per school >= 97% of its scenario requirement",
+      "min_fraction": 0.97
+    },
+    {
+      "id": "H7",
+      "rule": "one entrance per school, pairwise separation",
+      "min_m": 40.0
+    },
+    {
+      "id": "H8",
+      "rule": "no internal circulation connects two schools"
+    },
+    {
+      "id": "H9",
+      "rule": "each school's playing ground fits as a clear rectangle inside its own demise",
+      "rectangles_m": {
+        "kindergarten": [
+          15,
+          10
+        ],
+        "primary": [
+          25,
+          20
+        ],
+        "secondary": [
+          30,
+          20
+        ]
+      }
+    },
+    {
+      "id": "H10",
+      "rule": "flag ceremony area at grade, Art. 7(2)",
+      "min_m2": 600
+    },
+    {
+      "id": "H11",
+      "rule": "agricultural plot Art. 7(4) and greenery Art. 7(5)",
+      "min_m2": {
+        "agri": 120,
+        "green": 200
+      }
+    },
+    {
+      "id": "H12",
+      "rule": "no point on a classroom floor more than 9.0 m from a facade",
+      "max_bar_depth_m": 21.0
+    },
+    {
+      "id": "H13",
+      "rule": "bar depth in the volume carrying the multipurpose hall",
+      "min_m": 16.25
+    },
+    {
+      "id": "H14",
+      "rule": "plates never grow with height; no transfer structure"
+    },
+    {
+      "id": "H15",
+      "rule": "plan aspect ratio per volume",
+      "max": 4.0
+    },
+    {
+      "id": "H16",
+      "rule": "basement under at most one volume, footprint <= that volume's",
+      "depth_m": 4.0
+    },
+    {
+      "id": "H17",
+      "rule": "volumes with long axis within 7 deg of true east-west",
+      "min_count": 2
+    },
+    {
+      "id": "H18",
+      "rule": "classroom module delivers the scenario's required area",
+      "tolerance_m2": 0.5
+    },
+    {
+      "id": "H19",
+      "rule": "sanitary stacks align vertically through all levels of their volume"
+    },
+    {
+      "id": "H20",
+      "rule": "open ground at grade excluding roofs",
+      "min_m2": 1400
+    }
+  ],
+  "objectives": [
+    {
+      "rank": 1,
+      "maximise": "total_outdoor_m2",
+      "target": 4600
+    },
+    {
+      "rank": 2,
+      "maximise": "fraction of classrooms with north or south aspect",
+      "target_T1": 1.0,
+      "target_T2": 0.6
+    },
+    {
+      "rank": 3,
+      "maximise": "outdoor_at_grade_share_pct"
+    },
+    {
+      "rank": 4,
+      "maximise": "court sun hours, 21 Jun and 21 Dec, 09:00-15:00"
+    },
+    {
+      "rank": 5,
+      "minimise": "facade_per_gfa"
+    },
+    {
+      "rank": 6,
+      "minimise": "distinct_floor_plates"
+    },
+    {
+      "rank": 7,
+      "minimise": "footprint_m2"
+    },
+    {
+      "rank": 8,
+      "minimise": "sum_of_levels"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "scenario",
+      "type": "enum",
+      "values": [
+        "A_client",
+        "B_compliant"
+      ],
+      "default": "B_compliant"
+    },
+    {
+      "name": "topology",
+      "type": "enum",
+      "values": [
+        "T1_three_bars",
+        "T2_court"
+      ],
+      "default": "T1_three_bars"
+    },
+    {
+      "name": "bay_m",
+      "type": "float",
+      "values": [
+        7.0,
+        8.0
+      ],
+      "note": "7.0 under scenario A, 8.0 under B"
+    },
+    {
+      "name": "bar_depth_m",
+      "type": "float",
+      "min": 17.0,
+      "max": 21.0,
+      "step": 0.5
+    },
+    {
+      "name": "corridor_m",
+      "type": "float",
+      "min": 3.0,
+      "max": 6.0
+    },
+    {
+      "name": "levels",
+      "type": "int",
+      "min": 1,
+      "max": 7
+    },
+    {
+      "name": "bar_y0",
+      "type": "float",
+      "min": 62.0,
+      "max": 126.0
+    },
+    {
+      "name": "bar_length_m",
+      "type": "float",
+      "min": 24.0
+    },
+    {
+      "name": "joint_m",
+      "type": "float",
+      "min": 3.0,
+      "max": 6.0,
+      "default": 3.0
+    },
+    {
+      "name": "setback_m",
+      "type": "float",
+      "min": 2.0,
+      "max": 8.0,
+      "default": {
+        "north": 2.0,
+        "east": 2.0,
+        "south": 2.0,
+        "west": 3.0
+      }
+    },
+    {
+      "name": "ground_floor_h_m",
+      "type": "float",
+      "min": 4.0,
+      "max": 5.0,
+      "default": 4.5
+    },
+    {
+      "name": "upper_floor_h_m",
+      "type": "float",
+      "min": 3.3,
+      "max": 3.9,
+      "default": 3.6
+    },
+    {
+      "name": "basement_under",
+      "type": "enum",
+      "values": [
+        "kindergarten",
+        "primary",
+        "secondary",
+        "none"
+      ],
+      "default": "secondary"
+    },
+    {
+      "name": "basement_depth_m",
+      "type": "float",
+      "min": 3.6,
+      "max": 4.5,
+      "default": 4.0
+    },
+    {
+      "name": "playground_placement",
+      "type": "enum",
+      "values": [
+        "grade",
+        "roof"
+      ]
+    },
+    {
+      "name": "overhang_ns_m",
+      "type": "float",
+      "min": 0.9,
+      "max": 1.8,
+      "default": 1.2
+    },
+    {
+      "name": "fin_depth_ew_m",
+      "type": "float",
+      "min": 2.0,
+      "max": 3.5,
+      "default": 3.0
+    },
+    {
+      "name": "bar_azimuth_deg",
+      "type": "float",
+      "min": 83.0,
+      "max": 97.0,
+      "default": 90.0,
+      "note": "the site is already cardinal; 90.0 is expected to win. Report the delta."
+    }
+  ]
+}

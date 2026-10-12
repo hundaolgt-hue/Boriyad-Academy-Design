@@ -1,0 +1,173 @@
+{
+  "T1_three_bars__B_compliant": {
+    "topology": "T1_three_bars",
+    "scenario": "B_compliant",
+    "feasible": true,
+    "separation_gap_m": 3.0,
+    "volumes": {
+      "kindergarten": {
+        "x0": 54.96,
+        "y0": 62.0,
+        "x1": 108.3,
+        "y1": 79.0,
+        "length_ew_m": 53.34,
+        "depth_ns_m": 17.0,
+        "levels": 3,
+        "footprint_m2": 906.8,
+        "gfa_m2": 2720,
+        "required_gfa_m2": 2720
+      },
+      "primary": {
+        "x0": 60.59,
+        "y0": 82.0,
+        "x1": 108.91,
+        "y1": 103.0,
+        "length_ew_m": 48.32,
+        "depth_ns_m": 21.0,
+        "levels": 6,
+        "footprint_m2": 1014.7,
+        "gfa_m2": 6088,
+        "required_gfa_m2": 6088
+      },
+      "secondary": {
+        "x0": 69.47,
+        "y0": 106.0,
+        "x1": 109.65,
+        "y1": 126.0,
+        "length_ew_m": 40.18,
+        "depth_ns_m": 20.0,
+        "levels": 6,
+        "footprint_m2": 803.6,
+        "gfa_m2": 4822,
+        "required_gfa_m2": 4821
+      }
+    },
+    "footprint_m2": 2725.1,
+    "coverage_pct": 59.0,
+    "gfa_m2": 13630,
+    "required_gfa_m2": 13630,
+    "open_at_grade_m2": 1893
+  },
+  "T1_three_bars__A_client": {
+    "topology": "T1_three_bars",
+    "scenario": "A_client",
+    "feasible": true,
+    "separation_gap_m": 3.0,
+    "volumes": {
+      "kindergarten": {
+        "x0": 52.14,
+        "y0": 62.0,
+        "x1": 108.3,
+        "y1": 79.0,
+        "length_ew_m": 56.16,
+        "depth_ns_m": 17.0,
+        "levels": 2,
+        "footprint_m2": 954.7,
+        "gfa_m2": 1909,
+        "required_gfa_m2": 1910
+      },
+      "secondary": {
+        "x0": 72.79,
+        "y0": 82.0,
+        "x1": 108.91,
+        "y1": 102.0,
+        "length_ew_m": 36.12,
+        "depth_ns_m": 20.0,
+        "levels": 3,
+        "footprint_m2": 722.4,
+        "gfa_m2": 2167,
+        "required_gfa_m2": 2167
+      },
+      "primary": {
+        "x0": 69.33,
+        "y0": 105.0,
+        "x1": 109.62,
+        "y1": 125.0,
+        "length_ew_m": 40.29,
+        "depth_ns_m": 20.0,
+        "levels": 5,
+        "footprint_m2": 805.8,
+        "gfa_m2": 4029,
+        "required_gfa_m2": 4029
+      }
+    },
+    "footprint_m2": 2482.9,
+    "coverage_pct": 53.8,
+    "gfa_m2": 8106,
+    "required_gfa_m2": 8106,
+    "open_at_grade_m2": 2135
+  },
+  "T2_court__B_compliant": {
+    "topology": "T2_court",
+    "scenario": "B_compliant",
+    "feasible": false
+  },
+  "T2_court__A_client": {
+    "topology": "T2_court",
+    "scenario": "A_client",
+    "feasible": true,
+    "separation_gap_m": 3.0,
+    "volumes": {
+      "secondary": {
+        "x0": 90.91,
+        "y0": 82.0,
+        "x1": 108.91,
+        "y1": 106.0,
+        "length_ew_m": 18.0,
+        "depth_ns_m": 24.0,
+        "levels": 6,
+        "footprint_m2": 432.0,
+        "gfa_m2": 2592,
+        "required_gfa_m2": 2167
+      },
+      "kindergarten": {
+        "x0": 52.14,
+        "y0": 62.0,
+        "x1": 108.3,
+        "y1": 79.0,
+        "length_ew_m": 56.16,
+        "depth_ns_m": 17.0,
+        "levels": 2,
+        "footprint_m2": 954.7,
+        "gfa_m2": 1909,
+        "required_gfa_m2": 1910
+      },
+      "primary": {
+        "x0": 62.34,
+        "y0": 109.0,
+        "x1": 109.74,
+        "y1": 126.0,
+        "length_ew_m": 47.4,
+        "depth_ns_m": 17.0,
+        "levels": 5,
+        "footprint_m2": 805.8,
+        "gfa_m2": 4029,
+        "required_gfa_m2": 4029
+      }
+    },
+    "footprint_m2": 2192.5,
+    "coverage_pct": 47.5,
+    "gfa_m2": 8530,
+    "required_gfa_m2": 8106,
+    "open_at_grade_m2": 2426,
+    "court": {
+      "x0": 56.41,
+      "y0": 82.0,
+      "x1": 88.91,
+      "y1": 106.0,
+      "width_ew_m": 32.5,
+      "depth_ns_m": 24.0,
+      "area_m2": 780
+    },
+    "playground_on_own_roof": {
+      "kindergarten": true,
+      "primary": false,
+      "secondary": false
+    },
+    "playground_fits_in_court": {
+      "kindergarten": true,
+      "primary": true,
+      "secondary": true
+    }
+  }
+}

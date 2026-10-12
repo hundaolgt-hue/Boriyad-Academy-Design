@@ -1,0 +1,313 @@
+{
+  "project": "Boriyad Youth Academy, Ashewa Meda, Oromia, Ethiopia",
+  "crs": {
+    "system": "UTM Zone 37N",
+    "datum": "Adindan",
+    "units": "metres",
+    "note": "The geotechnical report states hand-held GPS on UTM Adindan. Its borehole northings fall 36-84 m south of this polygon; the datum basis is unresolved. See docs/02-ground-and-survey-review.md."
+  },
+  "model_origin": {
+    "easting": 464000.0,
+    "northing": 996700.0,
+    "instruction": "Place Rhino world origin (0,0,0) at this easting/northing at reduced level 0.00. Model +X = true East, +Y = true North, +Z = up. All coordinates below are LOCAL (world minus origin)."
+  },
+  "boundary_survey_coordinates": [
+    {
+      "id": "P1",
+      "easting": 464112.5,
+      "northing": 996833.918,
+      "local_x": 112.5,
+      "local_y": 133.918
+    },
+    {
+      "id": "P2",
+      "easting": 464109.918,
+      "northing": 996749.453,
+      "local_x": 109.918,
+      "local_y": 49.453
+    },
+    {
+      "id": "P3",
+      "easting": 464041.882,
+      "northing": 996761.305,
+      "local_x": 41.882,
+      "local_y": 61.305
+    },
+    {
+      "id": "P4",
+      "easting": 464058.98,
+      "northing": 996827.622,
+      "local_x": 58.98,
+      "local_y": 127.622
+    },
+    {
+      "id": "P5",
+      "easting": 464066.779,
+      "northing": 996828.861,
+      "local_x": 66.779,
+      "local_y": 128.861
+    }
+  ],
+  "boundary_polygon_local": [
+    [
+      112.5,
+      133.918
+    ],
+    [
+      109.918,
+      49.453
+    ],
+    [
+      41.882,
+      61.305
+    ],
+    [
+      58.98,
+      127.622
+    ],
+    [
+      66.779,
+      128.861
+    ]
+  ],
+  "boundary_closed": true,
+  "area_m2": 4618.05,
+  "area_stated_in_brief_m2": 4621.8,
+  "edges": [
+    {
+      "from": "P1",
+      "to": "P2",
+      "length_m": 84.5,
+      "azimuth_deg": 181.75,
+      "off_nearest_cardinal_deg": 1.75
+    },
+    {
+      "from": "P2",
+      "to": "P3",
+      "length_m": 69.06,
+      "azimuth_deg": 279.88,
+      "off_nearest_cardinal_deg": 9.88
+    },
+    {
+      "from": "P3",
+      "to": "P4",
+      "length_m": 68.49,
+      "azimuth_deg": 14.46,
+      "off_nearest_cardinal_deg": 14.46
+    },
+    {
+      "from": "P4",
+      "to": "P5",
+      "length_m": 7.9,
+      "azimuth_deg": 80.97,
+      "off_nearest_cardinal_deg": 9.03
+    },
+    {
+      "from": "P5",
+      "to": "P1",
+      "length_m": 46.0,
+      "azimuth_deg": 83.69,
+      "off_nearest_cardinal_deg": 6.31
+    }
+  ],
+  "extent": {
+    "east_west_m": 70.62,
+    "north_south_m": 84.47
+  },
+  "boundary_functions": {
+    "west_edge_P3_P4": "x = 41.882 + 0.25783*(y - 61.305)   valid 61.305 <= y <= 127.622",
+    "east_edge_P1_P2": "x = 109.918 + 0.030569*(y - 49.453) valid 49.453 <= y <= 133.918",
+    "south_edge_P2_P3": "y = 49.453 + 0.174196*(109.918 - x) valid 41.882 <= x <= 109.918",
+    "north_edge_P4_P5": "y = 127.622 + 0.158867*(x - 58.980) valid 58.980 <= x <= 66.779",
+    "north_edge_P5_P1": "y = 128.861 + 0.110606*(x - 66.779) valid 66.779 <= x <= 112.500"
+  },
+  "largest_inscribed_cardinal_rectangle": {
+    "x_min": 58.9,
+    "y_min": 58.5,
+    "width_ew_m": 51.0,
+    "depth_ns_m": 68.0,
+    "area_m2": 3468,
+    "note": "Brute-force result at 1 m resolution. This is the orthogonal build envelope; the residual ~1,150 m2 is a western and southern wedge suited to landscape, drop-off and the agricultural plot."
+  },
+  "orientation": {
+    "true_north_is_model_plus_Y": true,
+    "finding": "The plot is very nearly cardinally aligned. East boundary 1.75 deg off true north-south; north boundary 6.31 deg off true east-west. Building parallel to the boundaries therefore also aligns the long elevations north and south. Do NOT rotate the grid; the site grain and the solar optimum coincide.",
+    "preferred_classroom_bar_axis_deg": 90.0,
+    "preferred_bar_axis_tolerance_deg": 7.0
+  },
+  "context": {
+    "roads": {
+      "east": "assumed principal road (Ambo Road corridor) - TO BE CONFIRMED",
+      "south": "secondary road / junction at the south-west",
+      "north": "possible frontage - TO BE CONFIRMED",
+      "west": "lower-density residential fabric, dense small plots"
+    },
+    "setbacks_assumed_m": {
+      "east": 2.0,
+      "north": 2.0,
+      "south": 2.0,
+      "west": 3.0,
+      "warning": "Road reservation NOT yet quantified. Treat as a parameter; re-run if a reservation is imposed."
+    },
+    "altitude_m": 2324,
+    "latitude_deg": 8.97,
+    "longitude_deg": 38.78
+  },
+  "climate": {
+    "koppen": "Weina Dega / subtropical highland",
+    "mean_annual_temp_C": 15.9,
+    "dry_season_day_max_C": 23.3,
+    "dry_season_night_min_C": 7.3,
+    "wet_season_max_C": 21.0,
+    "wet_season_min_C": 10.0,
+    "annual_rainfall_mm": 1089,
+    "annual_sunshine_hours": 2439,
+    "solar": {
+      "noon_altitude_range_deg": [
+        65,
+        85
+      ],
+      "zenith_passage_dates": [
+        "approx 20 April",
+        "approx 23 August"
+      ],
+      "sun_north_of_zenith": "late April to late August (kiremt rains, mostly diffuse)",
+      "sun_south_of_zenith": "remaining 8.5 months (clear dry season)",
+      "critical_orientations": "East and west. 07:00-09:00 and 15:30-18:00 the sun sits at 10-30 deg altitude. Horizontal shading is ineffective at these angles; use vertical fins.",
+      "overheating_design_condition": "March to April, end of the long dry season",
+      "design_rule": "North and south facades: horizontal overhang 1.2 m. East and west facades: vertical fins or a veranda of 2.5-3.0 m."
+    },
+    "wind": {
+      "dry_season_Oct_May": {
+        "direction": "E to NE",
+        "character": "northeast trades, dry and dust-laden"
+      },
+      "wet_season_Jun_Sep": {
+        "direction": "SW",
+        "character": "moist monsoon, rain-driving"
+      },
+      "typical_speed_ms": [
+        2,
+        4
+      ]
+    }
+  },
+  "ground": {
+    "source": "NATM Engineering Plc, October 2024, for Three M JY Trading Plc. Boreholes lie OUTSIDE this polygon - indicative only.",
+    "strata": [
+      {
+        "layer": "A",
+        "desc": "soft to medium stiff dark grey high plastic silty CLAY (black cotton)",
+        "thickness_m": [
+          2.0,
+          3.0
+        ]
+      },
+      {
+        "layer": "B",
+        "desc": "stiff to very stiff reddish brown high plastic silty CLAY with sand and gravel",
+        "base_depth_m": [
+          3.5,
+          15.0
+        ]
+      },
+      {
+        "layer": "C",
+        "desc": "weak to moderately weak highly weathered closely jointed fractured vesicular BASALT",
+        "top_depth_m": [
+          3.5,
+          15.0
+        ]
+      }
+    ],
+    "rockhead_depth_by_bh_m": {
+      "BH-1": 7.0,
+      "BH-2": 15.0,
+      "BH-3": 10.0,
+      "BH-4": 5.6,
+      "BH-5": 3.5,
+      "BH-6": 3.5
+    },
+    "groundwater": "none encountered to 10-15 m; surface water only in the rains; site described as swampy and nearly flat",
+    "free_swell_pct_range": [
+      10,
+      130
+    ],
+    "plasticity_index_range": [
+      22,
+      63
+    ],
+    "expansive_soil": "SEVERE. FW 120-130 pct with PI 45-63 at 1.5-3.0 m. Active zone assumed 2.5-4.0 m.",
+    "allowable_bearing_kPa_design": 275,
+    "allowable_bearing_kPa_report_recommendation": 364,
+    "bearing_note": "Report adopts BH-3; BH-2 is weaker. Carry 275 kPa until site-specific boreholes say otherwise.",
+    "founding_depth_m": 3.0,
+    "basement_slab_depth_m": 4.0,
+    "seismic": {
+      "zone": 3,
+      "pga_g": 0.1,
+      "importance_class": "III (school)",
+      "gamma_I": 1.2,
+      "design_pga_g": 0.12,
+      "code": "ES EN 1998-1:2015",
+      "note": "The report states I = 1.0, which is wrong for a school. Plan regularity matters: avoid re-entrant corners and torsional irregularity; separate volumes with movement joints."
+    },
+    "boreholes_reported": [
+      {
+        "id": "BH-1",
+        "easting": 464073,
+        "northing": 996713,
+        "rockhead_m": 7.0,
+        "inside_site_polygon": false
+      },
+      {
+        "id": "BH-2",
+        "easting": 464091,
+        "northing": 996705,
+        "rockhead_m": 15.0,
+        "inside_site_polygon": false
+      },
+      {
+        "id": "BH-3",
+        "easting": 464081,
+        "northing": 996697,
+        "rockhead_m": 10.0,
+        "inside_site_polygon": false
+      },
+      {
+        "id": "BH-4",
+        "easting": 464095,
+        "northing": 996691,
+        "rockhead_m": 5.6,
+        "inside_site_polygon": false
+      },
+      {
+        "id": "BH-5",
+        "easting": 464077,
+        "northing": 996674,
+        "rockhead_m": 3.5,
+        "inside_site_polygon": false
+      },
+      {
+        "id": "BH-6",
+        "easting": 464099,
+        "northing": 996665,
+        "rockhead_m": 3.5,
+        "inside_site_polygon": false
+      }
+    ]
+  },
+  "services": {
+    "water_demand_m3_per_day": 30,
+    "storage_days": 2,
+    "bulk_tank_m3": 80,
+    "roof_service_tank_m3": 25,
+    "wastewater_m3_per_day": [
+      25,
+      40
+    ],
+    "sanitation": "Waterborne. Art.8.2(13)/8.3(17) specify pits, which cannot stack. On-site packaged treatment (baffled reactor plus planted gravel filter) required; no soakaway is possible in this clay.",
+    "rainwater_harvest_m3_per_year": 2100,
+    "note": "Suspended ground-floor slab everywhere there is no basement. No high-water-demand trees (eucalyptus) within 1.5x mature height of any footing."
+  }
+}

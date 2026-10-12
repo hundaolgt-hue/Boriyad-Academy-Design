@@ -1,0 +1,310 @@
+{
+  "programme": {
+    "variant": "client",
+    "students": 2930,
+    "classrooms": 69
+  },
+  "options": [
+    {
+      "id": "S1",
+      "note": "East-west bands, buildings east on the road, yards west",
+      "bands": 3,
+      "feasible": true,
+      "fails": [],
+      "footprint_m2": 1884.7,
+      "coverage_pct": 40.8,
+      "open_at_grade_m2": 2733.4,
+      "open_per_student_m2": 0.933,
+      "ground_demand_m2": 4110.0,
+      "spare_m2": 508.1,
+      "buildings_east_west": 3,
+      "sum_levels": 15,
+      "facade_per_gfa": 0.636,
+      "tallest_m": 26.1,
+      "mean_yard_distance_from_road_m": 45.7,
+      "yards_shaded_at_assembly": 3,
+      "min_yard_slack_m2": 39.4,
+      "items": [
+        {
+          "school": "primary",
+          "levels": 7,
+          "bar": [
+            80.54,
+            62.05,
+            108.3,
+            82.06
+          ],
+          "plate_m2": 555.2,
+          "yard_m2": 763.9
+        },
+        {
+          "school": "kindergarten",
+          "levels": 3,
+          "bar": [
+            68.98,
+            85.06,
+            109.01,
+            102.06
+          ],
+          "plate_m2": 680.4,
+          "yard_m2": 357.8
+        },
+        {
+          "school": "secondary",
+          "levels": 5,
+          "bar": [
+            85.6,
+            105.06,
+            109.62,
+            125.87
+          ],
+          "plate_m2": 500.0,
+          "yard_m2": 667.6
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "note": "East-west bands, buildings west, yards east onto the road",
+      "bands": 3,
+      "feasible": true,
+      "fails": [],
+      "footprint_m2": 1884.7,
+      "coverage_pct": 40.8,
+      "open_at_grade_m2": 2733.4,
+      "open_per_student_m2": 0.933,
+      "ground_demand_m2": 4110.0,
+      "spare_m2": 508.1,
+      "buildings_east_west": 3,
+      "sum_levels": 15,
+      "facade_per_gfa": 0.636,
+      "tallest_m": 26.1,
+      "mean_yard_distance_from_road_m": 12.1,
+      "yards_shaded_at_assembly": 0,
+      "min_yard_slack_m2": 39.4,
+      "items": [
+        {
+          "school": "primary",
+          "levels": 7,
+          "bar": [
+            50.23,
+            62.05,
+            77.99,
+            82.06
+          ],
+          "plate_m2": 555.2,
+          "yard_m2": 763.9
+        },
+        {
+          "school": "kindergarten",
+          "levels": 3,
+          "bar": [
+            55.39,
+            85.06,
+            95.41,
+            102.06
+          ],
+          "plate_m2": 680.4,
+          "yard_m2": 357.8
+        },
+        {
+          "school": "secondary",
+          "levels": 5,
+          "bar": [
+            61.53,
+            105.06,
+            85.55,
+            125.87
+          ],
+          "plate_m2": 500.0,
+          "yard_m2": 667.6
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "note": "North-south strips, buildings north, yards south",
+      "bands": 3,
+      "feasible": false,
+      "fails": [
+        "C3 open at grade"
+      ],
+      "footprint_m2": 1999.3,
+      "coverage_pct": 43.3,
+      "open_at_grade_m2": 2618.8,
+      "open_per_student_m2": 0.894,
+      "ground_demand_m2": 4224.6,
+      "spare_m2": 393.4,
+      "buildings_east_west": 0,
+      "sum_levels": 14,
+      "facade_per_gfa": 0.614,
+      "tallest_m": 26.1,
+      "mean_yard_distance_from_road_m": 32.4,
+      "yards_shaded_at_assembly": 0,
+      "min_yard_slack_m2": 60.5,
+      "items": [
+        {
+          "school": "kindergarten",
+          "levels": 3,
+          "bar": [
+            48.0,
+            86.08,
+            66.0,
+            123.88
+          ],
+          "plate_m2": 680.4,
+          "yard_m2": 429.1
+        },
+        {
+          "school": "primary",
+          "levels": 7,
+          "bar": [
+            69.0,
+            99.43,
+            90.0,
+            125.87
+          ],
+          "plate_m2": 555.2,
+          "yard_m2": 785.0
+        },
+        {
+          "school": "secondary",
+          "levels": 4,
+          "bar": [
+            90.0,
+            95.14,
+            110.0,
+            125.87
+          ],
+          "plate_m2": 614.6,
+          "yard_m2": 661.7
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "note": "Primary over secondary in one shared-structure block, separate cores and entrances; kindergarten separate",
+      "bands": 2,
+      "feasible": false,
+      "fails": [
+        "yard area or width"
+      ]
+    },
+    {
+      "id": "S5",
+      "note": "Compact blocks, aspect ratio held near 1, in east-west bands",
+      "bands": 3,
+      "feasible": true,
+      "fails": [],
+      "footprint_m2": 1884.7,
+      "coverage_pct": 40.8,
+      "open_at_grade_m2": 2733.4,
+      "open_per_student_m2": 0.933,
+      "ground_demand_m2": 4110.0,
+      "spare_m2": 508.1,
+      "buildings_east_west": 3,
+      "sum_levels": 15,
+      "facade_per_gfa": 0.627,
+      "tallest_m": 26.1,
+      "mean_yard_distance_from_road_m": 44.7,
+      "yards_shaded_at_assembly": 3,
+      "min_yard_slack_m2": 39.4,
+      "items": [
+        {
+          "school": "primary",
+          "levels": 7,
+          "bar": [
+            80.54,
+            62.05,
+            108.3,
+            82.06
+          ],
+          "plate_m2": 555.2,
+          "yard_m2": 763.9
+        },
+        {
+          "school": "secondary",
+          "levels": 5,
+          "bar": [
+            83.91,
+            82.06,
+            108.91,
+            102.06
+          ],
+          "plate_m2": 500.0,
+          "yard_m2": 728.2
+        },
+        {
+          "school": "kindergarten",
+          "levels": 3,
+          "bar": [
+            76.93,
+            105.06,
+            109.62,
+            125.87
+          ],
+          "plate_m2": 680.4,
+          "yard_m2": 487.2
+        }
+      ]
+    },
+    {
+      "id": "S6",
+      "note": "Deepest bars the band allows, shortening the buildings to widen the yards",
+      "bands": 3,
+      "feasible": true,
+      "fails": [],
+      "footprint_m2": 1884.7,
+      "coverage_pct": 40.8,
+      "open_at_grade_m2": 2733.4,
+      "open_per_student_m2": 0.933,
+      "ground_demand_m2": 4110.0,
+      "spare_m2": 508.1,
+      "buildings_east_west": 3,
+      "sum_levels": 15,
+      "facade_per_gfa": 0.636,
+      "tallest_m": 26.1,
+      "mean_yard_distance_from_road_m": 45.7,
+      "yards_shaded_at_assembly": 3,
+      "min_yard_slack_m2": 39.4,
+      "items": [
+        {
+          "school": "primary",
+          "levels": 7,
+          "bar": [
+            80.54,
+            62.05,
+            108.3,
+            82.06
+          ],
+          "plate_m2": 555.2,
+          "yard_m2": 763.9
+        },
+        {
+          "school": "kindergarten",
+          "levels": 3,
+          "bar": [
+            68.98,
+            85.06,
+            109.01,
+            102.06
+          ],
+          "plate_m2": 680.4,
+          "yard_m2": 357.8
+        },
+        {
+          "school": "secondary",
+          "levels": 5,
+          "bar": [
+            85.6,
+            105.06,
+            109.62,
+            125.87
+          ],
+          "plate_m2": 500.0,
+          "yard_m2": 667.6
+        }
+      ]
+    }
+  ]
+}

@@ -617,7 +617,95 @@ Keep every step scripted from the parameter set. Do not hand-place geometry.
 
 ---
 
-## 13. How the model responds — verification sweep
+## 13. Massing options tested
+
+`python3 -I scripts/massing_options.py` generates six topologies against the
+same programme and the same constraint set, and scores them. The study exists
+so the chosen layout can be argued from numbers rather than from preference.
+
+| | Topology | Foot | Cov | Open/student | E–W | Facade/GFA | Yard from road | Shaded at assembly | Result |
+|---|---|---|---|---|---|---|---|---|---|
+| **S1** | **E–W bands, buildings east on the road, yards west** | 1,885 | 40.8% | **0.93** | **3/3** | 0.636 | **45.7 m** | **3/3** | **OK** |
+| S2 | E–W bands, buildings west, yards east onto the road | 1,885 | 40.8% | 0.93 | 3/3 | 0.636 | 12.1 m | 0/3 | OK |
+| S3 | N–S strips, buildings north, yards south | 1,999 | 43.3% | 0.89 | **0/3** | 0.614 | 32.4 m | 0/3 | fails C3 |
+| S4 | Primary over secondary stacked, shared structure, 2 bands | — | — | — | — | — | — | — | fails: no room for two clear pitches |
+| S5 | Compact blocks, aspect near 1, in E–W bands | 1,885 | 40.8% | 0.93 | 3/3 | **0.627** | 44.7 m | 3/3 | OK |
+| S6 | Deepest bars the band allows | 1,885 | 40.8% | 0.93 | 3/3 | 0.636 | 45.7 m | 3/3 | OK |
+
+### 13.1 The first thing the study shows
+
+**Footprint is identical across every feasible topology** — 1,885 m², 40.8%.
+Plate size is set by the gross floor area and the level cap, not by how the
+buildings are arranged. So the topology decision does not change *how much* you
+build. It changes **where the outdoor space lands and what quality it has**,
+which on a site at 1.58 m² per student is the thing worth optimising.
+
+### 13.2 Why the three genuinely different ideas fail
+
+**S3, north–south strips, is the only topology that changes the orientation —
+and it loses.** Three vertical strips across a 70 m wide site give strips of
+about 20 m, so every building runs north–south and **every classroom faces east
+or west**. At 9° N those are the two orientations that cannot be shaded: the
+sun sits at 10–30° altitude from 07:00–09:00 and 15:30–18:00, where horizontal
+devices do nothing. It also costs 114 m² more footprint, because short strips
+force less efficient plates, and it drops below the 0.90 m²/student open-ground
+floor. It fails on performance and on arithmetic at the same time.
+
+**S4, stacking primary over secondary, does not work — and this is the
+interesting failure.** The client's permission to share structure between those
+two schools suggests it should save ground. It does not. Combined they need
+6,344 m² of floor, which at G+6 is a 906 m² plate; at the 21 m depth limit that
+is a **43 m long building**. Both schools still need their own clear playing
+ground beside it, and a 55 m band minus a 43 m building leaves about 6 m. Tested
+with yards on both sides of the block, and with one yard in the depth left
+over, it still fails. **Sharing structure saves a movement joint and a party
+wall, not land.**
+
+**S2, the mirror of the chosen scheme, is feasible but worse on every soft
+measure.** Identical footprint and open area — but it puts the children's yards
+**12 m from the assumed road instead of 46 m**, and none of the three yards is
+shaded during the morning assembly. More on that below.
+
+### 13.3 Why S1 was chosen
+
+S1, S5 and S6 are variants of the same idea and score within 1.4% of each other
+on the only metric that separates them, facade area per m² of floor. S5 is
+marginally the most efficient envelope; the difference is not worth the deeper
+plans it implies. S1 was taken as the baseline for four reasons, in order of
+weight:
+
+1. **Every classroom faces north or south.** Three of three buildings run true
+   east–west, so a 1.2 m horizontal overhang does the whole shading job. This is
+   free on this site — the east boundary is 1.75° off true north–south — and it
+   is the largest passive gain available anywhere in the project.
+
+2. **The yards sit 46 m from the road, not 12.** The east boundary is the
+   assumed Ambo Road frontage. Putting the buildings there makes them the
+   acoustic and dust barrier for their own playgrounds. The October–May trade
+   winds come from the east and north-east carrying dust off an open plain;
+   a building between that wind and the children's yard is worth having.
+
+3. **All three yards are shaded during the morning assembly.** Assembly runs
+   about 07:30–08:00 with the sun low in the east. A yard west of its building
+   is in that building's shadow — no sun in the children's eyes, cooler ground.
+   In S2 all three yards face full morning sun at exactly that hour.
+
+4. **The west is the quiet side.** Lower-density residential fabric, no through
+   traffic. It is where play belongs, and the tapering western wedge that the
+   plot gives up as unbuildable becomes useful ground rather than leftover.
+
+### 13.4 What the study does not settle
+
+The band order — which school takes which band — is **forced by the taper, not
+chosen**. The site is 68 m wide at the south and 53 m at the north, so the
+hungriest compound takes the widest band. At the current baseline that is
+primary south, secondary middle, kindergarten north. It flips if the road
+hierarchy turns out to put the main traffic somewhere other than the east, which
+is still an open question.
+
+---
+
+## 14. How the model responds — verification sweep
 
 `python3 -I scripts/sweep.py` reproduces this. Every failure is real.
 
@@ -649,7 +737,7 @@ Read it as the project's decision map:
 
 ---
 
-## 14. Open issues — flag these, do not silently assume
+## 15. Open issues — flag these, do not silently assume
 
 1. **Which boundary is the Ambo Road**, and is there a usable northern
    frontage? It fixes the three gates, the drop-offs and which faces take

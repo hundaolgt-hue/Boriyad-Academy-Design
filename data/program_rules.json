@@ -1,0 +1,1104 @@
+{
+  "_about": "Editable rule set for the Boriyad schedule of accommodation. Every quantity is derived from enrolment; nothing is fixed to a particular student number. See docs/06-rhino-parametric-model.md.",
+  "governing_standard": "Qajeelfama Istaandaardii Manneen Barnootaa Oromiyaa, Lakk. 04/2016",
+  "registered_unit_size": {
+    "kindergarten": 150,
+    "primary": 1200,
+    "secondary": 1280,
+    "_article": "Art. 11(1)-(3). Enrolment above a unit size implies another registered unit; Art. 15 lets them share a compound."
+  },
+  "class_size": {
+    "kindergarten": 30,
+    "primary": 50,
+    "secondary": 40,
+    "_article": "Art. 11. Overridable, but these drive the classroom count."
+  },
+  "sanitary": {
+    "students_per_pit": 25,
+    "pit_area_m2": 1.08,
+    "pits_per_block": 8,
+    "_article": "Art. 8.2(13), 8.3(17). Pits cannot stack above ground, so this is waterborne sanitation in practice."
+  },
+  "gross_up_factor": 1.4,
+  "gross_up_composition": {
+    "net_scheduled_rooms": 0.715,
+    "horizontal_circulation": 0.14,
+    "vertical_circulation": 0.055,
+    "structure_and_walls": 0.065,
+    "services": 0.025
+  },
+  "blocks": {
+    "kindergarten": [
+      {
+        "key": "classroom",
+        "label": "Classroom",
+        "article": "8.1(1)",
+        "area_m2": {
+          "client": 49,
+          "compliant": 63
+        },
+        "count": {
+          "per": "classroom"
+        },
+        "note": "Art. 8.1(1) is 63 m2 (7x9); the client programme uses 49 m2 (7x7)"
+      },
+      {
+        "key": "golee",
+        "label": "Golee learning commons",
+        "article": "17(1)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 60
+        },
+        "count": {
+          "per": "classrooms",
+          "each": 6
+        },
+        "note": "Art. 17(1) five learning corners, pooled per cluster. Compliant schedule only"
+      },
+      {
+        "key": "director",
+        "label": "Director's office",
+        "article": "8.1(2)",
+        "area_m2": {
+          "client": 20,
+          "compliant": 20
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": false,
+        "note": "Art. 15 position: directors' offices duplicate per registered unit, the rest consolidate"
+      },
+      {
+        "key": "vice_director",
+        "label": "Vice-director / team leader",
+        "article": "-",
+        "area_m2": {
+          "client": 20,
+          "compliant": 20
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Client addition"
+      },
+      {
+        "key": "staff_room",
+        "label": "Staff room",
+        "article": "8.1(3)",
+        "area_m2": {
+          "client": 56,
+          "compliant": 72
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true
+      },
+      {
+        "key": "food_store",
+        "label": "Food store",
+        "article": "8.1(4)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 36
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true,
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "sick_bay",
+        "label": "Sick bay / rest room",
+        "article": "8.1(5)",
+        "area_m2": {
+          "client": 12,
+          "compliant": 20
+        },
+        "count": {
+          "per": "unit",
+          "n": 2
+        },
+        "consolidates": true
+      },
+      {
+        "key": "dining",
+        "label": "Children's dining",
+        "article": "8.1(6)",
+        "area_m2": {
+          "client": 20,
+          "compliant": 20
+        },
+        "count": {
+          "per": "students",
+          "each": 135
+        },
+        "note": "Art. 8.1(6) gives 4 rooms of 20 m2 per 150-child unit = one per 37.5 children; relaxed to one per 135 on the assumption of four sittings"
+      },
+      {
+        "key": "toilet",
+        "label": "Toilet block, segregated",
+        "article": "8.1(7)",
+        "area_m2": {
+          "client": 12,
+          "compliant": 12
+        },
+        "count": {
+          "per": "pits"
+        },
+        "note": "Adjacent handwashing required"
+      },
+      {
+        "key": "guard",
+        "label": "Guard room",
+        "article": "8.1(8)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 9
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true,
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "montessori",
+        "label": "Montessori / pedagogy room",
+        "article": "-",
+        "area_m2": {
+          "client": 20,
+          "compliant": 20
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true,
+        "note": "Client addition"
+      },
+      {
+        "key": "tv_room",
+        "label": "TV room",
+        "article": "-",
+        "area_m2": {
+          "client": 56,
+          "compliant": 56
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true,
+        "note": "Client addition"
+      },
+      {
+        "key": "nap_room",
+        "label": "Nap room",
+        "article": "-",
+        "area_m2": {
+          "client": 49,
+          "compliant": 49
+        },
+        "count": {
+          "per": "students",
+          "each": 540
+        },
+        "note": "Client addition"
+      },
+      {
+        "key": "meeting_hall",
+        "label": "Meeting hall",
+        "article": "-",
+        "area_m2": {
+          "client": 100,
+          "compliant": 100
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Client addition"
+      },
+      {
+        "key": "store",
+        "label": "Store room",
+        "article": "-",
+        "area_m2": {
+          "client": 16,
+          "compliant": 16
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "shower",
+        "label": "Shower",
+        "article": "-",
+        "area_m2": {
+          "client": 1.5,
+          "compliant": 1.5
+        },
+        "count": {
+          "per": "students",
+          "each": 270
+        }
+      },
+      {
+        "key": "record_room",
+        "label": "Record and photocopy room",
+        "article": "-",
+        "area_m2": {
+          "client": 36,
+          "compliant": 36
+        },
+        "count": {
+          "per": "school"
+        }
+      }
+    ],
+    "primary": [
+      {
+        "key": "classroom",
+        "label": "Learning classroom",
+        "article": "8.2(1)",
+        "area_m2": {
+          "client": 49,
+          "compliant": 56
+        },
+        "count": {
+          "per": "classroom"
+        },
+        "note": "Art. 8.2(1) is 56 m2 (7x8); the client programme uses 49 m2 (7x7)"
+      },
+      {
+        "key": "director",
+        "label": "Director's office",
+        "article": "8.2(2)",
+        "area_m2": {
+          "client": 20,
+          "compliant": 24
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": false
+      },
+      {
+        "key": "deputy",
+        "label": "Deputy director's office",
+        "article": "8.2(3)",
+        "area_m2": {
+          "client": 20,
+          "compliant": 24
+        },
+        "count": {
+          "per": "unit",
+          "n": 2
+        },
+        "consolidates": true
+      },
+      {
+        "key": "secretary",
+        "label": "Secretary office",
+        "article": "-",
+        "area_m2": {
+          "client": 12,
+          "compliant": 12
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Client addition"
+      },
+      {
+        "key": "staff_room",
+        "label": "Staff room",
+        "article": "8.2(5)",
+        "area_m2": {
+          "client": 80,
+          "compliant": 120
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true
+      },
+      {
+        "key": "staff_cafeteria",
+        "label": "Staff cafeteria",
+        "article": "8.2(5)",
+        "area_m2": {
+          "client": 56,
+          "compliant": 56
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true,
+        "note": "The client splits the cafeteria from the staff room"
+      },
+      {
+        "key": "dept_room",
+        "label": "Departmental room",
+        "article": "8.2(6)",
+        "area_m2": {
+          "client": 30,
+          "compliant": 24
+        },
+        "count": {
+          "per": "school",
+          "n": 4
+        },
+        "note": "Art. 8.2(6) reads 'bal'inni waliigalaa isaanii' - 96 m2 COMBINED for four rooms. Confirm with the Bureau; it swings 288 m2"
+      },
+      {
+        "key": "library",
+        "label": "Library / reading room",
+        "article": "8.2(4)",
+        "area_m2": {
+          "client": 100,
+          "compliant": 180
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true
+      },
+      {
+        "key": "env_kit",
+        "label": "Environmental science kit room, G1-6",
+        "article": "8.2(11)",
+        "area_m2": {
+          "client": 42,
+          "compliant": 64
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true
+      },
+      {
+        "key": "science_lab",
+        "label": "General science laboratory, G7-8",
+        "article": "8.2(12)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 64
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true,
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "ict",
+        "label": "ICT laboratory",
+        "article": "8.2(20)",
+        "area_m2": {
+          "client": 56,
+          "compliant": 63
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true,
+        "note": "40 computers, 20 MB link"
+      },
+      {
+        "key": "dining",
+        "label": "Student dining hall",
+        "article": "8.2(16)",
+        "area_m2": {
+          "client": 80,
+          "compliant": 120
+        },
+        "count": {
+          "per": "students",
+          "each": 875
+        },
+        "note": "Assumes staggered sittings"
+      },
+      {
+        "key": "general_store",
+        "label": "General store",
+        "article": "8.2(17)",
+        "area_m2": {
+          "client": 30,
+          "compliant": 36
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "food_store",
+        "label": "Food store",
+        "article": "8.2(15)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 42
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "meeting_hall",
+        "label": "Meeting room / hall",
+        "article": "-",
+        "area_m2": {
+          "client": 100,
+          "compliant": 100
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Client addition"
+      },
+      {
+        "key": "nurse",
+        "label": "Nurse / first-aid room",
+        "article": "-",
+        "area_m2": {
+          "client": 12,
+          "compliant": 12
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "handwash",
+        "label": "Hand-washing area",
+        "article": "8.2(13)",
+        "area_m2": {
+          "client": 1,
+          "compliant": 2
+        },
+        "count": {
+          "per": "pits"
+        },
+        "note": "One per sanitary block"
+      },
+      {
+        "key": "toilet",
+        "label": "Student toilet block",
+        "article": "8.2(13)",
+        "area_m2": {
+          "client": 20,
+          "compliant": 20
+        },
+        "count": {
+          "per": "pits"
+        },
+        "note": "One pit per 25 students, 1.08 m2 per pit"
+      },
+      {
+        "key": "guard",
+        "label": "Guard room",
+        "article": "8.2(21)",
+        "area_m2": {
+          "client": 4,
+          "compliant": 9
+        },
+        "count": {
+          "per": "school",
+          "n": 2
+        }
+      },
+      {
+        "key": "cleaner",
+        "label": "Cleaners' room",
+        "article": "-",
+        "area_m2": {
+          "client": 4,
+          "compliant": 4
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "staff_toilet",
+        "label": "Staff toilet",
+        "article": "-",
+        "area_m2": {
+          "client": 6,
+          "compliant": 6
+        },
+        "count": {
+          "per": "unit",
+          "n": 2
+        },
+        "consolidates": true
+      },
+      {
+        "key": "day_care",
+        "label": "Day care room",
+        "article": "8.2(7)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 32
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "exam_print",
+        "label": "Examination printing and store",
+        "article": "8.2(8)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 56
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "records",
+        "label": "Records and student register",
+        "article": "8.2(9)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 35
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "mat_prod",
+        "label": "Teaching-material production",
+        "article": "8.2(10)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 56
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "girls_hygiene",
+        "label": "Girls' hygiene room",
+        "article": "8.2(14)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 23.31
+        },
+        "count": {
+          "per": "unit",
+          "n": 2
+        },
+        "consolidates": true,
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "sen_centre",
+        "label": "Special-needs support centre",
+        "article": "8.2(18)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 72
+        },
+        "count": {
+          "per": "unit",
+          "n": 2
+        },
+        "consolidates": true,
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "inclusive",
+        "label": "Inclusive special class",
+        "article": "8.2(19)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 56
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      }
+    ],
+    "secondary": [
+      {
+        "key": "classroom",
+        "label": "Classroom",
+        "article": "8.3(1)",
+        "area_m2": {
+          "client": 49,
+          "compliant": 56
+        },
+        "count": {
+          "per": "classroom"
+        },
+        "note": "Art. 8.3(1) is 56 m2 (7x8); the client programme uses 49 m2 (7x7)"
+      },
+      {
+        "key": "director",
+        "label": "Director's office with secretary",
+        "article": "8.3(2)",
+        "area_m2": {
+          "client": 20,
+          "compliant": 42
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": false
+      },
+      {
+        "key": "vice_director",
+        "label": "Vice-director and team leader",
+        "article": "8.3(3)",
+        "area_m2": {
+          "client": 25,
+          "compliant": 25
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true
+      },
+      {
+        "key": "admin_finance",
+        "label": "Administration and finance",
+        "article": "8.3(4)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 24
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "dept_room",
+        "label": "Departmental room",
+        "article": "8.3(5)",
+        "area_m2": {
+          "client": 40,
+          "compliant": 30
+        },
+        "count": {
+          "per": "school",
+          "n": 4
+        },
+        "note": "Art. 8.3(5): 120 m2 total, 30 m2 each"
+      },
+      {
+        "key": "staff_room",
+        "label": "Staff room and cafeteria",
+        "article": "8.3(6)",
+        "area_m2": {
+          "client": 136,
+          "compliant": 150
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true
+      },
+      {
+        "key": "mat_prod",
+        "label": "Teaching-material production",
+        "article": "8.3(7)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 56
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "science_lab",
+        "label": "Science laboratory",
+        "article": "8.3(8)",
+        "area_m2": {
+          "client": 56,
+          "compliant": 198
+        },
+        "count": {
+          "per": "school",
+          "n": 3
+        },
+        "note": "Biology, chemistry and physics separately, fully installed, 22x9 m each"
+      },
+      {
+        "key": "hall",
+        "label": "Multipurpose hall",
+        "article": "8.3(9)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 425.75
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme. 16.25 x 26.20 m - sets the minimum bar depth"
+      },
+      {
+        "key": "library",
+        "label": "Library / reading room",
+        "article": "8.3(10)",
+        "area_m2": {
+          "client": 120,
+          "compliant": 272
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true,
+        "note": "16 x 17 m"
+      },
+      {
+        "key": "ict",
+        "label": "ICT laboratory",
+        "article": "8.3(11)",
+        "area_m2": {
+          "client": 56,
+          "compliant": 63
+        },
+        "count": {
+          "per": "unit",
+          "n": 2
+        },
+        "consolidates": true,
+        "note": "40 computers, 30 MB link"
+      },
+      {
+        "key": "inclusive",
+        "label": "Inclusive special class",
+        "article": "8.3(13)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 56
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "workshop",
+        "label": "Workshop / production room",
+        "article": "8.3(14)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 192
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme. 24 x 8 m"
+      },
+      {
+        "key": "exam_print",
+        "label": "Examination printing and store",
+        "article": "8.3(15)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 56
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "records",
+        "label": "Records and student register",
+        "article": "8.3(16)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 32
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "toilet",
+        "label": "Student toilet block",
+        "article": "8.3(17)",
+        "area_m2": {
+          "client": 20,
+          "compliant": 20
+        },
+        "count": {
+          "per": "pits"
+        },
+        "note": "One pit per 25 students"
+      },
+      {
+        "key": "handwash",
+        "label": "Hand-washing area",
+        "article": "-",
+        "area_m2": {
+          "client": 1,
+          "compliant": 1
+        },
+        "count": {
+          "per": "pits"
+        }
+      },
+      {
+        "key": "general_store",
+        "label": "General store",
+        "article": "8.3(18)",
+        "area_m2": {
+          "client": 30,
+          "compliant": 42
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "girls_washroom",
+        "label": "Girls' washroom",
+        "article": "8.3(19)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 32
+        },
+        "count": {
+          "per": "unit"
+        },
+        "consolidates": true,
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "food_store",
+        "label": "Food store",
+        "article": "8.3(20)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 36
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "dining",
+        "label": "Student dining hall",
+        "article": "8.3(21)",
+        "area_m2": {
+          "client": 64,
+          "compliant": 120
+        },
+        "count": {
+          "per": "students",
+          "each": 640
+        },
+        "note": "Assumes staggered sittings"
+      },
+      {
+        "key": "guard",
+        "label": "Guard room",
+        "article": "8.3(22)",
+        "area_m2": {
+          "client": 0,
+          "compliant": 12
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Omitted by the client programme"
+      },
+      {
+        "key": "first_aid",
+        "label": "First-aid room",
+        "article": "-",
+        "area_m2": {
+          "client": 16,
+          "compliant": 16
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Client addition"
+      },
+      {
+        "key": "counsellor",
+        "label": "Counsellor",
+        "article": "-",
+        "area_m2": {
+          "client": 12,
+          "compliant": 12
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Client addition"
+      },
+      {
+        "key": "maintenance",
+        "label": "Maintenance room",
+        "article": "-",
+        "area_m2": {
+          "client": 16,
+          "compliant": 16
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Client addition"
+      },
+      {
+        "key": "cleaner",
+        "label": "Cleaners' room",
+        "article": "-",
+        "area_m2": {
+          "client": 9,
+          "compliant": 9
+        },
+        "count": {
+          "per": "school"
+        },
+        "note": "Client document reads '3m x 3m = 90 m2'; taken as 9 m2"
+      }
+    ],
+    "central_office": [
+      {
+        "key": "managing_director",
+        "label": "Managing director",
+        "article": "-",
+        "area_m2": {
+          "client": 30,
+          "compliant": 30
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "principal",
+        "label": "Principal",
+        "article": "-",
+        "area_m2": {
+          "client": 25,
+          "compliant": 25
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "secretary",
+        "label": "Secretary",
+        "article": "-",
+        "area_m2": {
+          "client": 12,
+          "compliant": 12
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "academic_director",
+        "label": "Academic director",
+        "article": "-",
+        "area_m2": {
+          "client": 20,
+          "compliant": 20
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "quality",
+        "label": "Quality audit and data",
+        "article": "-",
+        "area_m2": {
+          "client": 30,
+          "compliant": 30
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "record_officer",
+        "label": "Record officer",
+        "article": "-",
+        "area_m2": {
+          "client": 30,
+          "compliant": 30
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "hrm_finance",
+        "label": "HRM and finance",
+        "article": "-",
+        "area_m2": {
+          "client": 20,
+          "compliant": 20
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "cashier",
+        "label": "Cashier and accountant",
+        "article": "-",
+        "area_m2": {
+          "client": 12,
+          "compliant": 12
+        },
+        "count": {
+          "per": "school"
+        }
+      },
+      {
+        "key": "toilet",
+        "label": "Toilet",
+        "article": "-",
+        "area_m2": {
+          "client": 2,
+          "compliant": 2
+        },
+        "count": {
+          "per": "school",
+          "n": 2
+        }
+      },
+      {
+        "key": "store",
+        "label": "Store",
+        "article": "-",
+        "area_m2": {
+          "client": 30,
+          "compliant": 30
+        },
+        "count": {
+          "per": "school"
+        }
+      }
+    ]
+  }
+}

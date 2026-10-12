@@ -1,0 +1,86 @@
+{
+  "_about": "Single input file for the Boriyad parametric model. Change anything here and re-run the three scripts; everything downstream follows.",
+  "enrolment": {
+    "kindergarten": 540,
+    "primary": 1750,
+    "secondary": 640
+  },
+  "programme_variant": "client",
+  "class_size_override": {},
+  "classroom_area_override": {},
+  "consolidate_registered_units": true,
+  "gross_up_factor": null,
+  "central_office_with": "gate_pavilion",
+  "standing_rate_m2_per_student": {
+    "kindergarten": 0.36,
+    "primary": 0.36,
+    "secondary": 0.45
+  },
+  "playing_ground_m2": {
+    "kindergarten": 150,
+    "primary": 500,
+    "secondary": 400
+  },
+  "playing_ground_min_rect_m": {
+    "kindergarten": [
+      15,
+      10
+    ],
+    "primary": [
+      25,
+      20
+    ],
+    "secondary": [
+      20,
+      20
+    ]
+  },
+  "overlap_assembly_with_pitch": true,
+  "simultaneous_assembly": true,
+  "gate_and_dropoff_m2": {
+    "kindergarten": 220,
+    "primary": 200,
+    "secondary": 180
+  },
+  "gate_pavilion_m2": 300,
+  "perimeter_and_fire_m2": 250,
+  "min_open_at_grade_m2": 0,
+  "min_open_at_grade_per_student_m2": 0.9,
+  "max_site_coverage": 0.63,
+  "max_levels": {
+    "kindergarten": 3,
+    "primary": 7,
+    "secondary": 7
+  },
+  "min_plate_m2": {
+    "kindergarten": 0,
+    "primary": 500,
+    "secondary": 500
+  },
+  "max_bar_depth_m": 21.0,
+  "min_bar_length_m": 24.0,
+  "ground_floor_h_m": 4.5,
+  "upper_floor_h_m": 3.6,
+  "max_height_m": 27.0,
+  "separation": {
+    "kg_joint_m": 3.0,
+    "primary_secondary_may_share_structure": true,
+    "shared_structure_joint_m": 0.0,
+    "circulation_separated": true,
+    "playground_separated": true,
+    "staff_separated": true
+  },
+  "setback_m": {
+    "north": 2.0,
+    "east": 2.0,
+    "south": 2.0,
+    "west": 3.0
+  },
+  "sizing_objective": "min_footprint",
+  "bar_azimuth_deg": 90.0,
+  "basement_under": "auto",
+  "basement_depth_m": 4.0,
+  "yard_circulation_factor": 0.15,
+  "enforce_playing_ground_rect": true,
+  "_note_playing_ground": "The client's stated secondary ground is 30 x 20 m (600 m2). That rectangle does not fit beside the secondary building in any band: it needs a 30 m clear yard width, and only the south band is wide enough, which the primary school needs for its own larger yard. 20 x 20 m is the largest that fits. Secondary needs only 288 m2 to assemble, so nothing is lost at the flag ceremony. Set secondary back to 600 / [30,20] to reproduce the conflict."
+}

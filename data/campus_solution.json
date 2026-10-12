@@ -1,0 +1,308 @@
+{
+  "inputs": {
+    "bar_azimuth_deg": 90.0,
+    "basement_depth_m": 4.0,
+    "basement_under": "auto",
+    "central_office_with": "gate_pavilion",
+    "class_size_override": {},
+    "classroom_area_override": {},
+    "consolidate_registered_units": true,
+    "enforce_playing_ground_rect": true,
+    "enrolment": {
+      "kindergarten": 540,
+      "primary": 1750,
+      "secondary": 640
+    },
+    "gate_and_dropoff_m2": {
+      "kindergarten": 220,
+      "primary": 200,
+      "secondary": 180
+    },
+    "gate_pavilion_m2": 300,
+    "gross_up_factor": null,
+    "ground_floor_h_m": 4.5,
+    "max_bar_depth_m": 21.0,
+    "max_height_m": 27.0,
+    "max_levels": {
+      "kindergarten": 3,
+      "primary": 7,
+      "secondary": 7
+    },
+    "max_site_coverage": 0.63,
+    "min_bar_length_m": 24.0,
+    "min_open_at_grade_m2": 0,
+    "min_open_at_grade_per_student_m2": 0.9,
+    "min_plate_m2": {
+      "kindergarten": 0,
+      "primary": 500,
+      "secondary": 500
+    },
+    "overlap_assembly_with_pitch": true,
+    "perimeter_and_fire_m2": 250,
+    "playing_ground_m2": {
+      "kindergarten": 150,
+      "primary": 500,
+      "secondary": 400
+    },
+    "playing_ground_min_rect_m": {
+      "kindergarten": [
+        15,
+        10
+      ],
+      "primary": [
+        25,
+        20
+      ],
+      "secondary": [
+        20,
+        20
+      ]
+    },
+    "programme_variant": "client",
+    "separation": {
+      "kg_joint_m": 3.0,
+      "primary_secondary_may_share_structure": true,
+      "shared_structure_joint_m": 0.0,
+      "circulation_separated": true,
+      "playground_separated": true,
+      "staff_separated": true
+    },
+    "setback_m": {
+      "north": 2.0,
+      "east": 2.0,
+      "south": 2.0,
+      "west": 3.0
+    },
+    "simultaneous_assembly": true,
+    "sizing_objective": "min_footprint",
+    "standing_rate_m2_per_student": {
+      "kindergarten": 0.36,
+      "primary": 0.36,
+      "secondary": 0.45
+    },
+    "upper_floor_h_m": 3.6,
+    "yard_circulation_factor": 0.15
+  },
+  "capacity": {
+    "kindergarten": {
+      "students": 540,
+      "class_size": 30,
+      "classrooms": 18,
+      "registered_units": 4,
+      "sanitary_pits": 22,
+      "sanitary_blocks": 3,
+      "m2_per_student_in_class": 1.63
+    },
+    "primary": {
+      "students": 1750,
+      "class_size": 50,
+      "classrooms": 35,
+      "registered_units": 2,
+      "sanitary_pits": 70,
+      "sanitary_blocks": 9,
+      "m2_per_student_in_class": 0.98
+    },
+    "secondary": {
+      "students": 640,
+      "class_size": 40,
+      "classrooms": 16,
+      "registered_units": 1,
+      "sanitary_pits": 26,
+      "sanitary_blocks": 4,
+      "m2_per_student_in_class": 1.23
+    },
+    "total_students": 2930,
+    "total_classrooms": 69
+  },
+  "demand": {
+    "kindergarten": {
+      "students": 540,
+      "gfa_m2": 2041.2,
+      "levels": 3,
+      "plate_m2": 680.4,
+      "assembly_m2": 194.4,
+      "pitch_m2": 150,
+      "yard_m2": 194.4,
+      "yard_circulation_m2": 29.2,
+      "gate_m2": 220,
+      "band_demand_m2": 904.0,
+      "territory_m2": 1124.0
+    },
+    "primary": {
+      "students": 1750,
+      "gfa_m2": 3886.4,
+      "levels": 7,
+      "plate_m2": 555.2,
+      "assembly_m2": 630.0,
+      "pitch_m2": 500,
+      "yard_m2": 630.0,
+      "yard_circulation_m2": 94.5,
+      "gate_m2": 200,
+      "band_demand_m2": 1279.7,
+      "territory_m2": 1479.7
+    },
+    "secondary": {
+      "students": 640,
+      "gfa_m2": 2458.4,
+      "levels": 5,
+      "plate_m2": 500,
+      "assembly_m2": 288.0,
+      "pitch_m2": 400,
+      "yard_m2": 400,
+      "yard_circulation_m2": 60.0,
+      "gate_m2": 180,
+      "band_demand_m2": 960.0,
+      "territory_m2": 1140.0
+    }
+  },
+  "central_office": {
+    "standalone_gfa_m2": 298.2,
+    "gate_pavilion_ground_m2": 300,
+    "located_with": "gate_pavilion"
+  },
+  "totals": {
+    "footprint_m2": 1884.7,
+    "coverage_pct": 40.8,
+    "yards_m2": 1224.4,
+    "gates_m2": 600,
+    "perimeter_m2": 250,
+    "ground_demand_m2": 4110.0,
+    "open_at_grade_m2": 2733.4,
+    "open_at_grade_per_student_m2": 0.93,
+    "roof_area_m2": 1884.7,
+    "total_outdoor_m2": 4618.1,
+    "total_outdoor_per_student_m2": 1.58,
+    "gfa_m2": 8684.2,
+    "spare_ground_m2": 508.1
+  },
+  "compounds": [
+    {
+      "school": "primary",
+      "band_y0": 62.05,
+      "band_y1": 83.31,
+      "band_area_m2": 1398.5,
+      "bar": {
+        "x0": 81.87,
+        "y0": 62.31,
+        "x1": 108.3,
+        "y1": 83.31
+      },
+      "bar_length_m": 26.44,
+      "bar_depth_m": 21.0,
+      "yard_west_limit_x": 50.55,
+      "yard": {
+        "x0": 50.55,
+        "y0": 62.05,
+        "x1": 78.87,
+        "y1": 83.31,
+        "width_m": 28.31,
+        "depth_m": 21.25,
+        "area_m2": 843.3,
+        "required_m2": 630.0,
+        "playing_ground_rect_m": [
+          25,
+          20
+        ]
+      },
+      "slack_m2": 118.8
+    },
+    {
+      "school": "secondary",
+      "band_y0": 83.31,
+      "band_y1": 103.31,
+      "band_area_m2": 1222.5,
+      "bar": {
+        "x0": 83.95,
+        "y0": 83.31,
+        "x1": 108.95,
+        "y1": 103.31
+      },
+      "bar_length_m": 25.0,
+      "bar_depth_m": 20.0,
+      "yard_west_limit_x": 55.71,
+      "yard": {
+        "x0": 55.71,
+        "y0": 83.31,
+        "x1": 80.95,
+        "y1": 103.31,
+        "width_m": 25.24,
+        "depth_m": 20.0,
+        "area_m2": 722.5,
+        "required_m2": 400,
+        "playing_ground_rect_m": [
+          20,
+          20
+        ]
+      },
+      "slack_m2": 262.5
+    },
+    {
+      "school": "kindergarten",
+      "band_y0": 106.31,
+      "band_y1": 125.87,
+      "band_area_m2": 1094.7,
+      "bar": {
+        "x0": 74.88,
+        "y0": 106.31,
+        "x1": 109.66,
+        "y1": 125.87
+      },
+      "bar_length_m": 34.77,
+      "bar_depth_m": 19.57,
+      "yard_west_limit_x": 61.53,
+      "yard": {
+        "x0": 61.53,
+        "y0": 106.31,
+        "x1": 71.88,
+        "y1": 125.87,
+        "width_m": 10.35,
+        "depth_m": 19.57,
+        "area_m2": 414.3,
+        "required_m2": 194.4,
+        "playing_ground_rect_m": [
+          15,
+          10
+        ]
+      },
+      "slack_m2": 190.7
+    }
+  ],
+  "band_order_south_to_north": [
+    "primary",
+    "secondary",
+    "kindergarten"
+  ],
+  "checks": [
+    {
+      "id": "C1",
+      "pass": true,
+      "detail": "ground demand 4,110 m2 against site 4,618  -> +508 m2"
+    },
+    {
+      "id": "C2",
+      "pass": true,
+      "detail": "coverage 40.8% (cap 63%)"
+    },
+    {
+      "id": "C3",
+      "pass": true,
+      "detail": "open at grade 2,733 m2, required 2,637 (0.93 m2/student)"
+    },
+    {
+      "id": "C4",
+      "pass": true,
+      "detail": "levels: kin G+2, pri G+6, sec G+4"
+    },
+    {
+      "id": "C5",
+      "pass": true,
+      "detail": "tallest 26.1 m (cap 27.0)"
+    },
+    {
+      "id": "C6",
+      "pass": true,
+      "detail": "three stacked compounds fit the boundary"
+    }
+  ],
+  "feasible": true
+}

@@ -1,51 +1,60 @@
 # Boriyad Youth Academy — Design Development
 
 New multi-cycle KG / Primary / Secondary campus, Ashewa Meda, Oromia.
-69 classrooms, ~2,930 students, 4,618.05 m² (surveyed), G+6.
+Three separately registered schools in three separate compounds on 4,618.05 m².
 
 Governing standard: *Qajeelfama Istaandaardii Manneen Barnootaa Oromiyaa,
 Lakk. 04/2016* (Oromia Education Bureau).
 
+## Current deliverable
+
+**`docs/06-rhino-parametric-model.md`** — the specification for the agent
+building the Rhino model. Self-contained and fully parametric: change the
+enrolment, classroom sizes, standing rates, required open ground or any other
+input in `data/config.json`, re-run three scripts, and the whole campus
+re-solves.
+
+```
+python3 -I scripts/make_rules.py        # only after editing the room rules
+python3 -I scripts/program_model.py     # enrolment -> schedule -> GFA
+python3 -I scripts/campus_model.py      # GFA + yards -> compounds -> geometry
+python3 -I scripts/validate_campus.py   # must exit 0
+python3 -I scripts/sweep.py             # shows how the model responds to inputs
+```
+
+Baseline: 2,930 students, 69 classrooms, 8,684 m² GFA, footprint 1,885 m²
+(40.8%), open at grade 2,733 m² (0.93 m²/student). 6/6 area checks, 12/12
+geometric checks.
+
 ## Documents
 
-| File | Phase | What it is |
-|---|---|---|
-| `docs/01-massing-study.md` | 1 | First massing study. §§1–3 current; §§0, 4–6 superseded. |
-| `docs/02-ground-and-survey-review.md` | 1 | Survey geometry and a review of the NATM geotechnical report, with a query sheet |
-| `docs/03-massing-study-r2.md` | 1 | Massing after the survey. §§1–3 current; §4 superseded. |
-| `docs/04-massing-study-r3.md` | 1 | Massing after the separation requirement — three schools, three gates |
-| **`docs/05-parametric-design-brief.md`** | 1 | **Current.** Self-contained brief for an agent building the parametric model in Rhino |
-| `docs/massing-study.html` | 1 | Illustrated massing study with site plans drawn from the survey |
+| File | What it is |
+|---|---|
+| `docs/06-rhino-parametric-model.md` | **Current.** Parametric model specification |
+| `docs/05-parametric-design-brief.md` | Superseded by 06 |
+| `docs/04-massing-study-r3.md` | How the massing reached three separate schools |
+| `docs/03-massing-study-r2.md` | Massing after the survey. §§1–3 current |
+| `docs/02-ground-and-survey-review.md` | Survey arithmetic and the NATM report review, with a query sheet |
+| `docs/01-massing-study.md` | First massing study. §§1–3 current |
+| `docs/massing-study.html` | Illustrated massing study |
+| `docs/three-compounds.html` | Illustrated compound planning — yards, plan, budget |
 
-## Data (machine-readable)
+## Data
 
 | File | Contents |
 |---|---|
-| `data/site.json` | survey coordinates, boundary functions, orientation, climate, ground, services |
-| `data/program.json` | reconciled schedule of accommodation, room by room, with article citations |
-| `data/seed_layouts.json` | validated seed layouts, 2 topologies × 2 programme scenarios |
-| `data/constraints.json` | hard constraints, objectives and parameters |
-| `data/scheme_T1_B.json` | worked example scheme, passes 20/20 hard constraints |
+| `data/config.json` | **the single input file** |
+| `data/program_rules.json` | room rules with scaling, every room cited to its article |
+| `data/site.json` | survey coordinates, boundary functions, orientation, climate, ground |
+| `data/program_resolved.json` | the schedule for the current enrolment |
+| `data/campus_solution.json` | geometry the Rhino model is built from |
 
-## Scripts
+## Decisions outstanding
 
-```
-python3 -I scripts/build_program.py              # rebuild data/program.json
-python3 -I scripts/build_site.py                 # rebuild data/site.json
-python3 -I scripts/solve_massing.py              # rebuild data/seed_layouts.json
-python3 -I scripts/validate_scheme.py <scheme.json>
-```
-
-## Live issues
-
-1. **Scenario A (the client programme as issued) will not pass licensing.**
-   It is 68% below the guideline-compliant schedule — see brief §6.5. The
-   primary toilet provision alone is one WC per 175 students against a required
-   one per 25.
-2. Which boundary is the Ambo Road, and is there a usable northern frontage?
-   Both affect the three gates.
-3. Road reservation setbacks are unquantified on every frontage.
-4. The NATM boreholes lie 36–84 m south of the surveyed polygon and are for a
-   different client. Four new holes to 15 m inside the site are required.
-5. Confirm the kindergarten at three levels, and whether enrolment is 2,930
-   (this programme) or 3,600 (Design Brief 01).
+1. **Which programme.** The guideline-compliant schedule cannot coexist with
+   three separated compounds on this site. Blocking.
+2. **Which boundary is the Ambo Road**, and is there a usable northern frontage.
+3. **Where the central office goes**, given that staff do not intermingle.
+4. Road reservation setbacks, unquantified on every frontage.
+5. Four boreholes to 15 m inside the site polygon — the NATM report is for
+   another parcel.

@@ -1,0 +1,53 @@
+{
+  "primary": {
+    "band_y0": 61.4,
+    "band_y1": 83.15,
+    "band_area_m2": 1433,
+    "bar": {
+      "x0": 80.87,
+      "y0": 62.15,
+      "x1": 108.28,
+      "y1": 83.15
+    },
+    "levels": 7,
+    "plate_m2": 576,
+    "yard_m2": 630,
+    "gate_m2": 200,
+    "yard_west_limit_x": 50.51,
+    "slack_m2": 28
+  },
+  "secondary": {
+    "band_y0": 86.15,
+    "band_y1": 107.9,
+    "band_area_m2": 1311,
+    "bar": {
+      "x0": 85.23,
+      "y0": 86.9,
+      "x1": 109.04,
+      "y1": 107.9
+    },
+    "levels": 5,
+    "plate_m2": 500,
+    "yard_m2": 600,
+    "gate_m2": 180,
+    "yard_west_limit_x": 56.9,
+    "slack_m2": 31
+  },
+  "kindergarten": {
+    "band_y0": 107.9,
+    "band_y1": 127.5,
+    "band_area_m2": 1089,
+    "bar": {
+      "x0": 77.23,
+      "y0": 107.9,
+      "x1": 109.7,
+      "y1": 127.5
+    },
+    "levels": 3,
+    "plate_m2": 637,
+    "yard_m2": 194,
+    "gate_m2": 220,
+    "yard_west_limit_x": 61.95,
+    "slack_m2": 39
+  }
+}

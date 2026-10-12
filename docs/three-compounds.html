@@ -1,0 +1,427 @@
+<title>Three Compounds</title>
+
+<style>
+:root{
+  --paper:#F1F0F4; --sheet:#FBFAFD; --ink:#16151B; --ink2:#56535F; --ink3:#83808D;
+  --rule:#DCD9E2; --rule2:#C6C2CE;
+  --blue:#2A6396; --blue-soft:#DCE6EF;
+  --amber:#A9762A; --amber-soft:#F0E5D0;
+  --olive:#5F6E3C; --olive-soft:#E1E5D4;
+  --brick:#9E4530; --brick-soft:#F2DFD9;
+  --f-display:Optima,Candara,"Gill Sans Nova","Gill Sans MT","Gill Sans",Corbel,"Trebuchet MS",sans-serif;
+  --f-body:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,serif;
+  --f-data:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --max:1120px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#131218; --sheet:#1A1922; --ink:#ECEAF2; --ink2:#A29EAE; --ink3:#7C7889;
+    --rule:#2D2A38; --rule2:#3D3A4A;
+    --blue:#7FB0DC; --blue-soft:#1E2C3A;
+    --amber:#D8A45C; --amber-soft:#2F2718;
+    --olive:#9FAF77; --olive-soft:#232818;
+    --brick:#D5836D; --brick-soft:#331E19;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131218; --sheet:#1A1922; --ink:#ECEAF2; --ink2:#A29EAE; --ink3:#7C7889;
+  --rule:#2D2A38; --rule2:#3D3A4A;
+  --blue:#7FB0DC; --blue-soft:#1E2C3A;
+  --amber:#D8A45C; --amber-soft:#2F2718;
+  --olive:#9FAF77; --olive-soft:#232818;
+  --brick:#D5836D; --brick-soft:#331E19;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+.masthead{border-bottom:1.5px solid var(--ink);padding:48px 0 22px}
+.eyebrow{font-family:var(--f-data);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink3);display:flex;flex-wrap:wrap;gap:18px;margin-bottom:26px}
+.eyebrow .rev{color:var(--brick)}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(36px,5.6vw,60px);
+  line-height:1.05;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--blue)}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink2);max-width:39em;margin:0}
+
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--rule);border-bottom:1px solid var(--rule)}
+.metric{background:var(--paper);padding:20px 0 22px}
+.metric .n{font-family:var(--f-display);font-size:30px;line-height:1;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;display:block;margin-bottom:7px}
+.metric .l{font-family:var(--f-data);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink3)}
+.metric.alert .n{color:var(--brick)}
+.metric.good .n{color:var(--olive)}
+
+section{padding:56px 0 8px;border-top:1px solid var(--rule)}
+.shead{display:grid;grid-template-columns:64px 1fr;align-items:start;margin-bottom:26px}
+.snum{font-family:var(--f-data);font-size:11px;letter-spacing:.1em;color:var(--blue);padding-top:.55em}
+h2{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,3.4vw,36px);
+  line-height:1.14;letter-spacing:-.01em;margin:0;text-wrap:balance;max-width:20em}
+.sbody{display:grid;grid-template-columns:64px minmax(0,1fr)}
+.sbody > .col{min-width:0}
+h3{font-family:var(--f-display);font-weight:400;font-size:20px;margin:34px 0 10px}
+h3:first-child{margin-top:0}
+p{margin:0 0 16px;max-width:36em}
+.lede{font-size:19px;color:var(--ink2);max-width:34em}
+em.oro{font-style:italic;color:var(--ink2)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+
+ul{margin:0 0 16px;padding-left:0;list-style:none;max-width:36em}
+ul li{position:relative;padding-left:22px;margin-bottom:9px}
+ul li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:1.5px;background:var(--rule2)}
+
+.note{border-left:2px solid var(--blue);background:var(--sheet);padding:18px 22px;margin:24px 0;max-width:38em}
+.note.warn{border-left-color:var(--brick)}
+.note.good{border-left-color:var(--olive)}
+.note p:last-child{margin-bottom:0}
+.note .tag{font-family:var(--f-data);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--blue);display:block;margin-bottom:8px}
+.note.warn .tag{color:var(--brick)}
+.note.good .tag{color:var(--olive)}
+
+.tw{overflow-x:auto;margin:22px 0 26px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:15px}
+caption{text-align:left;font-family:var(--f-data);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink3);padding-bottom:10px}
+th,td{padding:9px 14px 9px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+thead th{font-family:var(--f-data);font-weight:400;font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink3);border-bottom:1px solid var(--rule2)}
+td.n,th.n{text-align:right;font-family:var(--f-data);font-size:13.5px;
+  font-variant-numeric:tabular-nums;padding-right:0}
+tbody tr:last-child td{border-bottom:none}
+tr.total td{border-top:1px solid var(--rule2);font-weight:600}
+.yes{color:var(--olive)} .no{color:var(--brick)} .pick{background:var(--blue-soft)}
+.hot{background:var(--brick-soft);color:var(--brick)}
+
+figure{margin:26px 0 8px}
+figure svg{display:block;width:100%;height:auto}
+figcaption{font-family:var(--f-data);font-size:11px;line-height:1.6;letter-spacing:.03em;
+  color:var(--ink3);margin-top:12px;max-width:46em}
+.key{display:flex;flex-wrap:wrap;gap:20px;font-family:var(--f-data);font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin:14px 0 0}
+.key span{display:flex;align-items:center;gap:7px}
+.key i{width:13px;height:13px;display:block;border:1px solid var(--rule2)}
+
+/* budget bars */
+.budget{margin:14px 0 8px;font-family:var(--f-data);font-size:12px}
+.brow{display:grid;grid-template-columns:150px 1fr 86px;gap:14px;align-items:center;
+  padding:9px 0;border-bottom:1px solid var(--rule)}
+.brow:last-child{border-bottom:none}
+.brow .lv{color:var(--ink2);letter-spacing:.05em;font-size:11.5px}
+.bars{display:flex;height:22px;gap:1.5px;position:relative}
+.bars b{display:block}
+.b-fp{background:var(--blue)} .b-yard{background:var(--amber)}
+.b-gate{background:var(--brick)} .b-per{background:var(--ink3)}
+.b-spare{background:var(--olive);opacity:.45}
+.b-over{background:repeating-linear-gradient(45deg,var(--brick),var(--brick) 3px,transparent 3px,transparent 6px)}
+.brow .amt{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
+.sitemark{position:absolute;top:-4px;bottom:-4px;width:1.5px;background:var(--ink);opacity:.75}
+
+.asks{counter-reset:a;margin:20px 0 8px;max-width:38em}
+.ask{counter-increment:a;display:grid;grid-template-columns:30px 1fr;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--rule)}
+.ask::before{content:counter(a);font-family:var(--f-data);font-size:12px;color:var(--blue);
+  padding-top:.3em;font-variant-numeric:tabular-nums}
+.ask h4{font-family:var(--f-display);font-weight:400;font-size:18px;margin:0 0 5px}
+.ask p{font-size:15.5px;color:var(--ink2);margin:0}
+
+footer{border-top:1.5px solid var(--ink);margin-top:56px;padding:22px 0 60px;
+  font-family:var(--f-data);font-size:11px;letter-spacing:.08em;color:var(--ink3);
+  display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
+
+@media (max-width:720px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .shead,.sbody{grid-template-columns:1fr}
+  .snum{padding-top:0;margin-bottom:8px}
+  .brow{grid-template-columns:96px 1fr 70px;gap:9px}
+}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="eyebrow">
+    <span>Boriyad Youth Academy</span>
+    <span>Ashewa Meda · Oromia</span>
+    <span class="rev">Compound Planning 01</span>
+    <span>Phase 1 · Concept</span>
+  </div>
+  <h1>Three compounds,<br>three yards,<br><em>one decision left</em></h1>
+  <p class="standfirst">Full separation — no mixing in circulation or on the playground, staff included — turns three buildings into three self-contained compounds. It works on your programme with 632 m² to spare. On the guideline-compliant schedule it misses by 122 m², at maximum height everywhere.</p>
+</header>
+
+<div class="metrics">
+  <div class="metric"><span class="n">3</span><span class="l">compounds, no shared outdoor</span></div>
+  <div class="metric"><span class="n">1,424</span><span class="l">m² of yard, assembly overlapped</span></div>
+  <div class="metric good"><span class="n">+632</span><span class="l">m² spare, your programme</span></div>
+  <div class="metric alert"><span class="n">−122</span><span class="l">m² short, compliant schedule</span></div>
+  <div class="metric"><span class="n">0.36</span><span class="l">m² per child standing, KG</span></div>
+</div>
+
+<section>
+  <div class="shead"><div class="snum">01</div><h2>How much ground does a child need to stand on?</h2></div>
+  <div class="sbody"><div class="snum"></div><div class="col">
+    <p>Built from 95th-percentile shoulder breadth and body depth, plus the gap each age needs to hold a rank, then grossed up for aisles between class blocks, staff positions and the flag-mast frontage. You asked for the dense figures — the packing a real Ethiopian school assembly uses — so those are what the plan is drawn to.</p>
+  </div></div>
+
+  <figure id="fig-body"></figure>
+  <div class="sbody"><div class="snum"></div><div class="col">
+    <figcaption>Each person in plan, at scale. The ellipse is the body at shoulder breadth × depth; the square is the ground allowance including the share of aisle and staff space. Secondary students need nearly twice the ground of a kindergarten child.</figcaption>
+
+    <div class="tw">
+      <table>
+        <caption>Standing allowance by age</caption>
+        <thead><tr><th>Cohort</th><th class="n">Age</th><th class="n">Shoulder</th><th class="n">Lateral pitch</th><th class="n">Rank pitch</th><th class="n">Design</th><th class="n">Dense · adopted</th></tr></thead>
+        <tbody>
+          <tr><td>Kindergarten</td><td class="n">4–6</td><td class="n">0.28</td><td class="n">0.50</td><td class="n">0.70</td><td class="n">0.58</td><td class="n pick">0.36</td></tr>
+          <tr><td>Primary G1–4</td><td class="n">7–10</td><td class="n">0.32</td><td class="n">0.55</td><td class="n">0.70</td><td class="n">0.50</td><td class="n pick">0.31</td></tr>
+          <tr><td>Primary G5–8</td><td class="n">11–14</td><td class="n">0.38</td><td class="n">0.60</td><td class="n">0.75</td><td class="n">0.65</td><td class="n pick">0.41</td></tr>
+          <tr><td>Secondary</td><td class="n">15–18</td><td class="n">0.46</td><td class="n">0.65</td><td class="n">0.80</td><td class="n">0.73</td><td class="n pick">0.45</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Kindergarten carries a 1.50 gross factor against 1.25–1.30 for the older cohorts. Four-year-olds do not hold ranks, teachers stand among them rather than in front, and you need to reach any child quickly — so the smallest bodies do not produce the smallest allowance per head once supervision is counted.</p>
+
+    <div class="note good">
+      <span class="tag">Overlapping the assembly onto the pitch is what makes this work</span>
+      <p>Three separate assembly areas <em>plus</em> three separate pitches needs 2,359 m² at dense rates. Overlapped — the same paved surface, used at different times of day — it needs <strong>1,424 m²</strong>. That single decision releases 935 m², which is the difference between a scheme that fits and one that does not.</p>
+    </div>
+
+    <div class="tw">
+      <table>
+        <caption>Yard per compound</caption>
+        <thead><tr><th>School</th><th class="n">Students</th><th class="n">Assembly</th><th class="n">Playing ground</th><th class="n">Yard adopted</th><th>Governed by</th></tr></thead>
+        <tbody>
+          <tr><td>Kindergarten</td><td class="n">540</td><td class="n">194</td><td class="n">150</td><td class="n pick">194</td><td>assembly</td></tr>
+          <tr><td>Primary</td><td class="n">1,750</td><td class="n">630</td><td class="n">500</td><td class="n pick">630</td><td>assembly</td></tr>
+          <tr><td>Secondary</td><td class="n">640</td><td class="n">288</td><td class="n">600</td><td class="n pick">600</td><td class="no">playing ground</td></tr>
+          <tr class="total"><td>Total</td><td class="n">2,930</td><td class="n">1,112</td><td class="n">1,250</td><td class="n">1,424</td><td>&nbsp;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Secondary is the only yard where sport governs rather than assembly. Six hundred and forty students need 288 m² to stand; the 600 m² comes from your own 30 × 20 m playing ground. <strong>That is the softest 200 m² on the site</strong>, and §04 comes back to it.</p>
+  </div></div>
+</section>
+
+<section>
+  <div class="shead"><div class="snum">02</div><h2>The plan — three territories, nothing shared outdoors</h2></div>
+  <div class="sbody"><div class="snum"></div><div class="col">
+    <p class="lede">Each school takes a horizontal band of the site holding its building, its yard and its gate. Buildings sit east along the road; yards run west behind them. Fence lines run east–west between compounds.</p>
+  </div></div>
+
+  <figure id="fig-plan"></figure>
+  <div class="sbody"><div class="snum"></div><div class="col">
+    <div class="key">
+      <span><i style="background:var(--blue)"></i> Building</span>
+      <span><i style="background:var(--amber)"></i> Yard — assembly and pitch</span>
+      <span><i style="background:var(--olive)"></i> Planting and setback</span>
+      <span><i style="background:var(--brick)"></i> Gate and drop-off</span>
+    </div>
+    <figcaption>True north up, drawn from survey points P1–P5. Dashed lines are the compound boundaries; the three yards read as one field divided into three pitches, but no student crosses a fence. Gates open between yards for whole-school events.</figcaption>
+
+    <div class="tw">
+      <table>
+        <caption>Compounds — your programme as issued</caption>
+        <thead><tr><th>Compound</th><th class="n">Band depth</th><th class="n">Territory</th><th class="n">Building</th><th class="n">Levels</th><th class="n">Yard</th><th class="n">Slack</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Primary</strong> · south</td><td class="n">21.8 m</td><td class="n">1,433</td><td class="n">27.4 × 21.0</td><td class="n">G+6</td><td class="n">656</td><td class="n">28</td></tr>
+          <tr><td><strong>Secondary</strong> · middle</td><td class="n">21.8 m</td><td class="n">1,311</td><td class="n">23.8 × 21.0</td><td class="n">G+4</td><td class="n">612</td><td class="n">31</td></tr>
+          <tr><td><strong>Kindergarten</strong> · north</td><td class="n">19.6 m</td><td class="n">1,089</td><td class="n">32.5 × 19.6</td><td class="n">G+2</td><td class="n">290</td><td class="n">39</td></tr>
+          <tr class="total"><td>Total</td><td class="n">—</td><td class="n">3,833</td><td class="n">1,713 m²</td><td class="n">—</td><td class="n">1,558</td><td class="n">+632</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <span class="tag">Why primary takes the south and kindergarten the north</span>
+      <p>The plot tapers: the south band is 68 m wide, the north only 53. Primary is the hungriest compound — 1,750 students need a 630 m² yard on top of the largest building — so it has to take the widest band. Kindergarten needs the least of everything and fits the narrowest. The allocation is forced by the site's geometry, not chosen. It flips only if the road hierarchy says the youngest children must sit furthest from the traffic, and that answer is still outstanding.</p>
+    </div>
+    <p>One correction carried into this plan: the secondary building holds a <strong>500 m² minimum floor plate</strong>. Sized purely on area it would come out 15 m long over seven storeys — a point block where the stair and lift eat the floor. At five levels and 24 m long it behaves like a building.</p>
+  </div></div>
+</section>
+
+<section>
+  <div class="shead"><div class="snum">03</div><h2>The budget — and where the compliant schedule fails</h2></div>
+  <div class="sbody"><div class="snum"></div><div class="col">
+    <p>Both programmes measured against the same 4,618 m² of ground, with every building already at its maximum permitted height — kindergarten G+2, primary and secondary G+6. The black line is the site boundary.</p>
+    <div class="budget" id="budget"></div>
+    <div class="key" style="margin-bottom:22px">
+      <span><i style="background:var(--blue)"></i> Building footprint</span>
+      <span><i style="background:var(--amber)"></i> Yards</span>
+      <span><i style="background:var(--brick)"></i> Gates and drop-offs</span>
+      <span><i style="background:var(--ink3)"></i> Perimeter and fire access</span>
+      <span><i style="background:var(--olive);opacity:.45"></i> Spare</span>
+    </div>
+    <p>The compliant schedule needs <strong>4,740 m² against a 4,618 m² site</strong>. There is no height left to trade — every volume is already at the cap. So this is not a massing problem that better planning solves.</p>
+    <div class="note warn">
+      <span class="tag">The decision this forces</span>
+      <p>You cannot have three separated compounds <em>and</em> the guideline-compliant schedule on this plot. One of the two has to give, and until it does, nothing downstream — plans, structure, cost — can be committed. Three ways to close 122 m² are below, in the order I would try them.</p>
+    </div>
+  </div></div>
+</section>
+
+<section>
+  <div class="shead"><div class="snum">04</div><h2>Three ways to close 122 m²</h2></div>
+  <div class="sbody"><div class="snum"></div><div class="col">
+    <div class="tw">
+      <table>
+        <caption>Ranked by what they cost</caption>
+        <thead><tr><th>&nbsp;</th><th>Move</th><th class="n">Saves</th><th>What it costs</th></tr></thead>
+        <tbody>
+          <tr class="pick"><td><strong>1</strong></td><td>Cut the secondary playing ground from 30 × 20 to 20 × 20</td><td class="n">200 m²</td><td>A half-court instead of a full one. Secondary needs only 288 m² to assemble, so nothing is lost at the flag ceremony — and the roof deck takes the rest of the play. <strong>Clears the gap with 78 m² to spare.</strong></td></tr>
+          <tr><td><strong>2</strong></td><td>Negotiate ~860 m² of floor out of the reconciliation</td><td class="n">123 m²<br>of footprint</td><td>About 15% of the 5,524 m² compliance gap. The volume sits in the three 198 m² laboratories and the 425.75 m² hall. Needs the Bureau.</td></tr>
+          <tr><td><strong>3</strong></td><td>Kindergarten to G+3</td><td class="n">227 m²</td><td>Four storeys for four-year-olds. Arithmetically the cleanest, and the one I would take last.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Option 1 is almost free. Your own figure for the secondary ground was 30 × 20 m — it is not a regulation dimension, and the guideline asks for a sports field, not a court of a given size. Dropping it to 20 × 20 is the difference between a scheme that fits and one that does not.</p>
+  </div></div>
+</section>
+
+<section>
+  <div class="shead"><div class="snum">05</div><h2>The question I still need answered</h2></div>
+  <div class="sbody"><div class="snum"></div><div class="col">
+    <div class="asks">
+      <div class="ask"><div><h4>Where does the central office go?</h4><p>The 213 m² group function — managing director, principal, academic director, finance, HR, records — serves all three schools. If staff cannot intermingle either, it cannot sit inside any one compound without that school's staff hosting the other two. My suggestion is a small fourth volume at the main gate: it solves visitor reception for all three without anyone entering a school, and it gives the academy a public face on the road. The alternative is to put it in one compound with its own separate external entrance.</p></div></div>
+    </div>
+    <p>Everything else I can now proceed on. Still open from earlier rounds, and unchanged: which boundary is the Ambo Road, the road reservation setbacks, and four boreholes inside the site polygon.</p>
+  </div></div>
+</section>
+
+<footer>
+  <span>Rapha Engineering and Consulting — working notes</span>
+  <span>Compound Planning 01 · Phase 1 · draft for discussion</span>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+  function txt(x,y,s,o){
+    o=o||{};
+    return '<text x="'+x.toFixed(2)+'" y="'+y.toFixed(2)+'" fill="'+(o.fill||"var(--ink3)")+
+      '" font-size="'+(o.size||3.4)+'" font-family="var(--f-data)" letter-spacing="'+(o.ls||0.25)+
+      '" text-anchor="'+(o.anchor||"middle")+'" dominant-baseline="'+(o.base||"middle")+'">'+esc(s)+'</text>';
+  }
+
+  /* ---------------- figure 1 · body and allowance, in plan ---------------- */
+  (function(){
+    var C=[["Kindergarten","4–6",0.28,0.17,0.36,"540 children"],
+           ["Primary","7–14",0.35,0.20,0.36,"1,750 students"],
+           ["Secondary","15–18",0.46,0.26,0.45,"640 students"]];
+    var S=78, gap=1.25, b=[], x=0, maxS=0;
+    C.forEach(function(c){ maxS=Math.max(maxS,Math.sqrt(c[4])); });
+    C.forEach(function(c,i){
+      var side=Math.sqrt(c[4]);
+      var cx=x+maxS/2, cy=maxS/2;
+      b.push('<rect x="'+((cx-side/2)*S).toFixed(1)+'" y="'+((cy-side/2)*S).toFixed(1)+
+             '" width="'+(side*S).toFixed(1)+'" height="'+(side*S).toFixed(1)+
+             '" fill="var(--amber)" fill-opacity="0.20" stroke="var(--amber)" stroke-width="1.1"/>');
+      b.push('<ellipse cx="'+(cx*S).toFixed(1)+'" cy="'+(cy*S).toFixed(1)+
+             '" rx="'+(c[2]/2*S).toFixed(1)+'" ry="'+(c[3]/2*S).toFixed(1)+
+             '" fill="var(--blue)" fill-opacity="0.75"/>');
+      var ty=(maxS+0.14)*S;
+      b.push(txt(cx*S, ty,      c[0], {fill:"var(--ink)",size:13,ls:0.4}));
+      b.push(txt(cx*S, ty+17,   "age "+c[1]+" · "+c[5], {size:10.5}));
+      b.push(txt(cx*S, ty+34,   c[4].toFixed(2)+" m² each", {fill:"var(--amber)",size:12}));
+      b.push(txt(cx*S, (cy-side/2)*S-9, (side).toFixed(2)+" m", {size:9.5}));
+      x += maxS+gap;
+    });
+    var w=(x-gap+maxS*0.1)*S, h=(maxS+0.14)*S+46;
+    document.getElementById("fig-body").innerHTML =
+      '<svg viewBox="'+(-8)+' '+(-14)+' '+(w+16).toFixed(0)+' '+(h+20).toFixed(0)+
+      '" role="img" aria-label="Plan comparison of standing allowance per child by age">'+b.join("")+'</svg>';
+  })();
+
+  /* ---------------- figure 2 · compound site plan ---------------- */
+  (function(){
+    var SITE=[[112.500,133.918],[109.918,49.453],[41.882,61.305],[58.980,127.622],[66.779,128.861]];
+    function west(y){ return 41.882+0.25783*(y-61.305); }
+    function east(y){ return 109.918+0.030569*(y-49.453); }
+    /* compounds, south to north: [key, label, levels, bandY0, bandY1, barX0, barY0, barX1, barY1] */
+    var C=[["primary","PRIMARY","G+6",61.40,83.15,  80.87,62.15,108.28,83.15],
+           ["secondary","SECONDARY","G+4",86.15,107.90, 85.23,86.90,109.04,107.90],
+           ["kindergarten","KINDERGARTEN","G+2",107.90,127.50, 77.23,107.90,109.70,127.50]];
+    var YARDLBL={primary:"656 m²",secondary:"612 m²",kindergarten:"290 m²"};
+    function P(a){ return a.map(function(p){ return p[0].toFixed(2)+","+(-p[1]).toFixed(2); }).join(" "); }
+    var b=[];
+    /* site + planting ground */
+    b.push('<polygon points="'+P(SITE)+'" fill="var(--olive)" fill-opacity="0.16" stroke="var(--ink3)" stroke-width="0.6" stroke-dasharray="3 2"/>');
+    C.forEach(function(c){
+      var y0=c[3],y1=c[4], bx0=c[5],by0=c[6],bx1=c[7],by1=c[8];
+      /* yard: band west of the building, inside the boundary */
+      var yw=[[west(y0)+3,y0],[bx0-3,y0],[bx0-3,y1],[west(y1)+3,y1]];
+      b.push('<polygon points="'+P(yw)+'" fill="var(--amber)" fill-opacity="0.30" stroke="var(--amber)" stroke-width="0.6"/>');
+      b.push(txt((west((y0+y1)/2)+3+bx0-3)/2, -( (y0+y1)/2 )+1.6, "YARD", {fill:"var(--amber)",size:3.4}));
+      b.push(txt((west((y0+y1)/2)+3+bx0-3)/2, -( (y0+y1)/2 )-2.6, YARDLBL[c[0]], {fill:"var(--amber)",size:2.9}));
+      /* building */
+      b.push('<rect x="'+bx0+'" y="'+(-by1)+'" width="'+(bx1-bx0).toFixed(2)+'" height="'+(by1-by0).toFixed(2)+
+             '" fill="var(--blue)" fill-opacity="0.60" stroke="var(--blue)" stroke-width="0.7"/>');
+      b.push(txt((bx0+bx1)/2, -(by0+by1)/2+1.8, c[1], {fill:"var(--paper)",size:3.5}));
+      b.push(txt((bx0+bx1)/2, -(by0+by1)/2-2.8, c[2], {fill:"var(--paper)",size:3.0}));
+      /* gate on the east frontage */
+      var gy=(by0+by1)/2;
+      b.push('<line x1="'+(bx1+7)+'" y1="'+(-gy)+'" x2="'+(bx1+1.6)+'" y2="'+(-gy)+
+             '" stroke="var(--brick)" stroke-width="1.0"/>');
+      b.push('<polygon points="'+(bx1+0.2)+','+(-gy)+' '+(bx1+2.4)+','+(-gy-1.5)+' '+
+             (bx1+2.4)+','+(-gy+1.5)+'" fill="var(--brick)"/>');
+    });
+    /* compound division lines */
+    [[83.15,86.15],[107.90,107.90]].forEach(function(d){
+      var y=(d[0]+d[1])/2;
+      b.push('<line x1="'+(west(y)+1).toFixed(2)+'" y1="'+(-y)+'" x2="'+(east(y)-1).toFixed(2)+'" y2="'+(-y)+
+             '" stroke="var(--brick)" stroke-width="0.7" stroke-dasharray="4 2.5"/>');
+    });
+    b.push(txt(62, -84.6, "compound boundary", {fill:"var(--brick)", size:2.7}));
+    /* north arrow */
+    b.push('<g stroke="var(--ink2)" stroke-width="0.5" fill="none">'+
+      '<line x1="47" y1="-118" x2="47" y2="-127"/>'+
+      '<polyline points="45,-124 47,-127.5 49,-124"/></g>'+ txt(47,-113,"N",{size:4,fill:"var(--ink2)"}));
+    b.push(txt(118, -72, "road frontage assumed", {fill:"var(--ink3)", size:2.7, anchor:"middle"}));
+    document.getElementById("fig-plan").innerHTML =
+      '<svg viewBox="34 -140 92 100" role="img" aria-label="Site plan of three separated school compounds, true north up">'+
+      b.join("")+'</svg>';
+  })();
+
+  /* ---------------- figure 3 · at-grade budget ---------------- */
+  (function(){
+    var SITE=4618;
+    var ROWS=[
+      ["Your programme", 1713, 1424, 600, 250],
+      ["Compliant schedule", 2466, 1424, 600, 250]
+    ];
+    var MAX=5000;
+    var out='<div class="brow" style="border-bottom:1px solid var(--rule2)">'+
+            '<span class="lv" style="color:var(--ink3);text-transform:uppercase;letter-spacing:.12em;font-size:10.5px">programme</span>'+
+            '<span class="lv" style="color:var(--ink3);text-transform:uppercase;letter-spacing:.12em;font-size:10.5px">ground demand against the 4,618 m² site</span>'+
+            '<span class="lv" style="text-align:right;color:var(--ink3);text-transform:uppercase;letter-spacing:.12em;font-size:10.5px">balance</span></div>';
+    ROWS.forEach(function(r){
+      var fp=r[1], yd=r[2], gt=r[3], pr=r[4];
+      var used=fp+yd+gt+pr, bal=SITE-used;
+      var pc=function(v){ return (v/MAX*100).toFixed(2)+"%"; };
+      var seg='<b class="b-fp" style="width:'+pc(fp)+'" title="footprint"></b>'+
+              '<b class="b-yard" style="width:'+pc(yd)+'" title="yards"></b>'+
+              '<b class="b-gate" style="width:'+pc(gt)+'" title="gates"></b>'+
+              '<b class="b-per" style="width:'+pc(pr)+'" title="perimeter"></b>'+
+              (bal>0 ? '<b class="b-spare" style="width:'+pc(bal)+'"></b>'
+                     : '<b class="b-over" style="width:'+pc(-bal)+'"></b>');
+      out+='<div class="brow"><span class="lv">'+r[0]+'</span>'+
+           '<span class="bars">'+seg+'<span class="sitemark" style="left:'+(SITE/MAX*100).toFixed(2)+'%"></span></span>'+
+           '<span class="amt" style="color:'+(bal>0?"var(--olive)":"var(--brick)")+'">'+
+           (bal>0?"+":"")+bal.toLocaleString()+' m²</span></div>';
+    });
+    out+='<div class="brow" style="border-top:1px solid var(--rule2);border-bottom:none">'+
+         '<span class="lv" style="color:var(--ink3)">site boundary</span>'+
+         '<span class="lv" style="color:var(--ink2)">black line at 4,618 m² · every building already at its height cap</span>'+
+         '<span class="amt"></span></div>';
+    document.getElementById("budget").innerHTML=out;
+  })();
+})();
+</script>
